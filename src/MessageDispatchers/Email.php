@@ -95,7 +95,7 @@ class Email extends AbstractDispatcher
     {
         $this->message->setBody($message);
 
-        $mailer = \Swift_Mailer::newInstance($transport);
+        $mailer = \Swift_Mailer::newInstance($this->transport);
         return $mailer->send($this->message);
     }
 }
