@@ -17,9 +17,8 @@ Install via composer, add the following to your composer.json.
 
 Run `composer install`
 
-### Usage
+### Email Example
 
-Example of sending an email.
 
     <?php
     require_once(__DIR__ . '/vendor/autoload.php');
@@ -28,22 +27,31 @@ Example of sending an email.
 
     $message_dispatcher = Omnimessage::create('Email');
 
-    // Create your mail transport object
-    $transport = \Swift_SmtpTransport::newInstance('localhost', 25);
-    $message_dispatcher->setTransport($transport);
+    // Set smtp transport
+    $message_dispatcher->setTransport('smtp', array(
+        'host' => 'localhost',
+        'port' => 25,
+    ));
+
+    // Set mail transport (PHP mail)
+    $message_dispatcher->setTransport('mail');
+
+    // Set send mail transport (Default send mail command is: /usr/sbin/sendmail -bs)
+    $message_dispatcher->setTransport('send_mail');
 
     // Create the message
     $message_dispatcher->setSubject('Test message')
-        ->setFrom(array('test@example.com'))
-        ->setTo(array('test1@example.com'))
+        ->setFrom('test@example.com')
+        ->setTo('test1@example.com')
         ->setReplyTo('no-reply@example.com')
         ->send('This is a test message.');
 
     if ($message_dispatcher) {
-        echo "Message sent";
+        echo "Message sent\n";
     } else {
-        echo "Message no sent";
+        echo "Message not sent\n";
     }
+
 
 ## License
 

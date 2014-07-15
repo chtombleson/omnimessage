@@ -8,6 +8,11 @@ class Email extends AbstractDispatcher
     private $properties = array();
     private $message;
     private $transport;
+    private $available_transports = array(
+        'smtp'      => 'Swift_SmtpTransport',
+        'send_mail' => 'Swift_SendmailTransport',
+        'mail'      => 'Swift_MailTransport',
+    );
 
     public function __construct()
     {
@@ -30,9 +35,45 @@ class Email extends AbstractDispatcher
         return $this->transport;
     }
 
-    public function setTransport($transport)
+    public function setTransport($type='smtp', $options=array())
     {
-        $this->transport = $transport;
+        if (!in_array($type, array_keys($this->available_transports))) {
+            throw new Exception('Email Transport: ' . $type . ' is not available');
+        }
+
+        switch ($type) {
+            case 'smtp':
+                $class = '\\'. $this->available_transports['smtp'];
+
+                if (!isset($options['host']) && !isset($options['port'])) {
+                    throw new Exception('Email Transport smtp requires host & port options');
+                }
+
+                $this->transport = $class::newInstance($options['host'], $options['port']);
+
+                if (isset($options['username']) && isset($options['password'])) {
+                    $this->transport->setUsername($options['username'])
+                        ->setPassword($options['password']);
+                }
+                break;
+
+            case 'send_mail':
+                $class = '\\' . $this->available_transports['send_mail'];
+                $cmd = '/usr/sbin/sendmail -bs';
+
+                if (!empty($options['cmd'])) {
+                    $cmd = $options['cmd'];
+                }
+
+                $this->transport = $class::newInstance($cmd);
+                break;
+
+            case 'mail':
+                $class = '\\' . $this->available_transports['mail'];
+                $this->transport = $class::newInstance();
+                break;
+        }
+
         return $this;
     }
 
