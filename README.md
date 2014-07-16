@@ -76,6 +76,10 @@ Run `composer install`
     }
 
 
+## Tests
+
+Test use phpunit, they can be run using the `phpunit` command in the root directory.
+
 ## License
 
 See LICENSE
