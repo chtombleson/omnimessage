@@ -10,7 +10,9 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "swiftmailer/swiftmailer": "@stable"
+        "swiftmailer/swiftmailer": "@stable",
+        "symfony/finder": "2.5.*",
+        "twilio/sdk": "3.12.4"
     },
     "require-dev": {
         "phpunit/phpunit": "4.1.*"

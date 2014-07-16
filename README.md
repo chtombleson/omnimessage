@@ -53,6 +53,29 @@ Run `composer install`
     }
 
 
+### Twilio Example
+
+
+    <?php
+    require_once(__DIR__ . '/vendor/autoload.php');
+
+    use Omnimessage\Omnimessage;
+
+    $message_dispatcher = Omnimessage::create('Twilio');
+
+    $msg = $message_dispatcher->setAccountSid('{{ account_sid }}')
+        ->setAuthToken('{{ auth_token }}')
+        ->setFrom('+15005550006')
+        ->setTo('+15005550006')
+        ->send('Test message');
+
+    if ($msg->sid) {
+        echo "Message sent\n";
+    } else {
+        echo "Message not sent\n";
+    }
+
+
 ## License
 
 See LICENSE
