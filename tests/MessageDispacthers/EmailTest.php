@@ -1,7 +1,9 @@
 <?php
+namespace Omnimessage\Tests\MessageDispatchers;
+
 use Omnimessage\MessageDispatchers\Email;
 
-class EmailTest extends PHPUnit_Framework_TestCase
+class EmailTest extends \PHPUnit_Framework_TestCase
 {
     protected $email;
 

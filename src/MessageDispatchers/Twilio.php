@@ -2,7 +2,7 @@
 namespace Omnimessage\MessageDispatchers;
 
 use Omnimessage\Exception;
-use Services_Twilio;
+use Omnimessage\Service\Twilio as TwilioService;
 
 class Twilio extends AbstractDispatcher
 {
@@ -13,7 +13,7 @@ class Twilio extends AbstractDispatcher
 
     public function getAccountSid()
     {
-        return $account_sid;
+        return $this->account_sid;
     }
 
     public function setAccountSid($account_sid)
@@ -80,13 +80,15 @@ class Twilio extends AbstractDispatcher
             throw new Exception('Twilio dispatcher requires To & From to be set');
         }
 
-        $twilio = new Services_Twilio($this->account_sid, $this->auth_token);
-        $twilio_message = $twilio->account->sms_messages->create(
-            $this->from,
-            $this->to,
-            $this->body
-        );
+        $twilio = new TwilioService();
+        $response = $twilio->setAccountSid($this->getAccountSid())
+            ->setAuthToken($this->getAuthToken())
+            ->send(array(
+                'from'  => $this->getFrom(),
+                'to'    => $this->getTo(),
+                'body'  => $this->getBody(),
+            ));
 
-        return $twilio_message;
+        return $response;
     }
 }

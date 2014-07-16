@@ -71,7 +71,7 @@ Run `composer install`
         ->setBody('Test sms')
         ->send();
 
-    if ($msg->sid) {
+    if ($msg['sid']) {
         echo "Message sent\n";
     } else {
         echo "Message not sent\n";

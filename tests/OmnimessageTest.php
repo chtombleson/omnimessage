@@ -1,8 +1,10 @@
 <?php
+namespace Omnimessage\Tests;
+
 use Omnimessage\Omnimessage;
 use Symfony\Component\Finder\Finder;
 
-class OmnimessageTest extends PHPUnit_Framework_TestCase
+class OmnimessageTest extends \PHPUnit_Framework_TestCase
 {
     public function testCreate()
     {
