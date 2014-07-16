@@ -44,7 +44,8 @@ Run `composer install`
         ->setFrom('test@example.com')
         ->setTo('test1@example.com')
         ->setReplyTo('no-reply@example.com')
-        ->send('This is a test message.');
+        ->setBody('This is a test message')
+        ->send();
 
     if ($message_dispatcher) {
         echo "Message sent\n";
@@ -67,7 +68,8 @@ Run `composer install`
         ->setAuthToken('{{ auth_token }}')
         ->setFrom('+15005550006')
         ->setTo('+15005550006')
-        ->send('Test message');
+        ->setBody('Test sms')
+        ->send();
 
     if ($msg->sid) {
         echo "Message sent\n";

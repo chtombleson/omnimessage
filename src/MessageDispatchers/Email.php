@@ -132,10 +132,19 @@ class Email extends AbstractDispatcher
         return $this;
     }
 
-    public function send($message)
+    public function getBody()
     {
-        $this->message->setBody($message);
+        return $this->message->getBody();
+    }
 
+    public function setBody($body)
+    {
+        $this->message->setBody($body);
+        return $this;
+    }
+
+    public function send()
+    {
         $mailer = \Swift_Mailer::newInstance($this->transport);
         return $mailer->send($this->message);
     }

@@ -3,7 +3,9 @@ namespace Omnimessage\MessageDispatchers;
 
 abstract class AbstractDispatcher
 {
-    abstract public function send($message);
+    abstract public function getBody();
+    abstract public function setBody($body);
+    abstract public function send();
 
     public function getName()
     {

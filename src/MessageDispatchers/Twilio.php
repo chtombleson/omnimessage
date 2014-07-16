@@ -55,8 +55,23 @@ class Twilio extends AbstractDispatcher
         return $this;
     }
 
-    public function send($message)
+    public function getBody()
     {
+        return $this->body;
+    }
+
+    public function setBody($body)
+    {
+        $this->body = $body;
+        return $this;
+    }
+
+    public function send()
+    {
+        if (empty($this->body)) {
+            throw new Exception('Twilio dispatcher requires the Body to be set');
+        }
+
         if (empty($this->auth_token) || empty($this->account_sid)) {
             throw new Exception('Twilio dispatcher requires Account Sid & Auth Token to be set');
         }
@@ -69,7 +84,7 @@ class Twilio extends AbstractDispatcher
         $twilio_message = $twilio->account->sms_messages->create(
             $this->from,
             $this->to,
-            $message
+            $this->body
         );
 
         return $twilio_message;

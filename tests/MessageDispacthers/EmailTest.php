@@ -23,7 +23,8 @@ class EmailTest extends PHPUnit_Framework_TestCase
             ->setFrom('hello1@example.com')
             ->setReplyTo('no-reply@example.com')
             ->setTransport('mail')
-            ->setContentType('text/html');
+            ->setContentType('text/html')
+            ->setBody('Hello world');
 
         $this->assertEquals('hello', $this->email->getSubject());
         $this->assertEquals(array('hello@example.com' => null), $this->email->getTo());
@@ -31,6 +32,7 @@ class EmailTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(array('no-reply@example.com' => null), $this->email->getReplyTo());
         $this->assertInstanceOf('\\Swift_MailTransport', $this->email->getTransport());
         $this->assertEquals('text/html', $this->email->getContentType());
+        $this->assertEquals('Hello world', $this->email->getBody());
 
         $this->email->setTransport('smtp', array(
             'host' => 'localhost',
