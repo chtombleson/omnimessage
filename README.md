@@ -78,6 +78,30 @@ Run `composer install`
     }
 
 
+### Slack Example
+
+
+    <?php
+    require_once(__DIR__ . '/vendor/autoload.php');
+
+    use Omnimessage\Omnimessage;
+
+    $message_dispatcher = Omnimessage::create('Slack');
+
+    $msg = $message_dispatcher->setToken('{{ token }}')
+        ->setTeam('test')
+        ->setChannel('test')
+        ->setUsername('test')
+        ->setBody('Test sms')
+        ->send();
+
+    if ($msg['ok']) {
+        echo "Message sent\n";
+    } else {
+        echo "Message not sent\n";
+    }
+
+
 ## Tests
 
 Test use phpunit, they can be run using the `phpunit` command in the root directory.
