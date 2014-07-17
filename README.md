@@ -1,5 +1,7 @@
 # Omnimessage
 
+[![Build Status](https://travis-ci.org/chtombleson/omnimessage.svg?branch=master)](https://travis-ci.org/chtombleson/omnimessage)
+
 A simple to use PHP multi-message dispatcher. This project is currently
 under active development and is not yet stable.
 
