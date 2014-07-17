@@ -40,9 +40,9 @@ Return: array, array of available message dispatchers
 
 ## Omnimessage\MessageDispatchers API
 
-  * [Email]()
-  * [Twilio]()
-  * [Slack]()
+  * [Email](https://github.com/chtombleson/omnimessage/blob/master/docs/email.md)
+  * [Twilio](https://github.com/chtombleson/omnimessage/blob/master/docs/twilio.md)
+  * [Slack](https://github.com/chtombleson/omnimessage/blob/master/docs/slack.md)
 
 ## Creating a message dispatcher
 

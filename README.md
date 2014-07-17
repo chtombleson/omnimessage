@@ -17,6 +17,15 @@ Install via composer, add the following to your composer.json.
 
 Run `composer install`
 
+### API Docs
+
+Documentation is in the docs directory.
+
+  * [Getting started](https://github.com/chtombleson/omnimessage/blob/master/docs/index.md)
+  * [Email API](https://github.com/chtombleson/omnimessage/blob/master/docs/email.md)
+  * [Twilio API](https://github.com/chtombleson/omnimessage/blob/master/docs/twilio.md)
+  * [Slack API](https://github.com/chtombleson/omnimessage/blob/master/docs/slack.md)
+
 ### Examples
 
 See examples directory.
