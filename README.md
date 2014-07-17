@@ -39,3 +39,7 @@ Test use phpunit, they can be run using the `phpunit` command in the root direct
 ## License
 
 See LICENSE
+
+## Changelog
+
+See CHANGELOG
