@@ -30,7 +30,7 @@ class Twilio
 
     public function send($data)
     {
-        if (empty($this->getAccountSid()) && empty($this->getAuthToken())) {
+        if (empty($this->account_sid) && empty($this->auth_token)) {
             throw new Exception('Twilio requires Account SID & Auth Token');
         }
 

@@ -18,7 +18,7 @@ class Slack
 
     public function send($data)
     {
-        if (empty($this->getToken())) {
+        if (empty($this->token)) {
             throw new Exception('Slack requires token');
         }
 
