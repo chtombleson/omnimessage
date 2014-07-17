@@ -32,6 +32,7 @@ Using Omnimessage is pretty straight forward, see example below.
 ### Omnimessage::create(string $message_dispatcher)
 
 Parameter: string message_dispatcher, type of message dispatcher you want (Email etc)
+
 Return: Omnimessage\MessageDispatchers, message dispacther object
 
 ### Omnimessage::getMessageDispatchers()
