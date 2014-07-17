@@ -67,7 +67,7 @@ class Twilio
 
         $response = curl_exec($ch);
 
-        if (!empty(curl_error($ch))) {
+        if (curl_error($ch)) {
             throw new Exception('Twilio curl error: ' . curl_error($ch));
         }
 
