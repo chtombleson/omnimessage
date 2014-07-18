@@ -6,6 +6,20 @@ Send a message as sms via Twilio.
 
 Namespace: Omnimessage\MessageDispatchers\Twilio
 
+### get()
+
+Get the properties of the dispatcher.
+
+Return: array of properties
+
+### set(array $properties)
+
+Set the properties of the dispatcher.
+
+Parameter: array properties, array of properties to set on the dispatcher
+
+Return: Omnimessage\MessageDispatchers\Twilio
+
 ### getAccountSid()
 
 Return: string, Twilio account sid

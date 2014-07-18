@@ -7,6 +7,12 @@ class Omnimessage
 {
     public static function create($message_dispatcher)
     {
+        if (!in_array($message_dispatcher, self::getMessageDispatchers())) {
+            throw new Exception(
+                'Message Dispatcher: ' . $message_dispather . ' does not exist'
+            );
+        }
+
         $class = 'Omnimessage\\MessageDispatchers\\' . $message_dispatcher;
 
         if (class_exists($class)) {
@@ -16,6 +22,15 @@ class Omnimessage
                 'Message Dispatcher: ' . $message_dispather . ' does not exist'
             );
         }
+    }
+
+    public static function createMulti($message_dispatchers, $options)
+    {
+        $message_dispatchers = array_filter($message_dispatchers, function($dispatcher) {
+            return in_array($dispatcher, self::getMessageDispatchers());
+        });
+
+        return new MultiDispatcher($message_dispatchers, $options);
     }
 
     public static function getMessageDispatchers()

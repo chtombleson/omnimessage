@@ -12,6 +12,43 @@ class Slack extends AbstractDispatcher
     private $team;
     private $token;
 
+    public function get()
+    {
+        return array(
+            'body'      => $this->getBody(),
+            'username'  => $this->getUsername(),
+            'channel'   => $this->getChannel(),
+            'team'      => $this->getTeam(),
+            'token'     => $this->getToken(),
+        );
+    }
+
+    public function set($properties)
+    {
+        if (!empty($properties['body'])) {
+            $this->setBody($properties['body']);
+        }
+
+        if (!empty($properties['username'])) {
+            $this->setUsername($properties['username']);
+        }
+
+        if (!empty($properties['channel'])) {
+            $this->setChannel($properties['channel']);
+        }
+
+        if (!empty($properties['team'])) {
+            $this->setTeam($properties['team']);
+        }
+
+        if (!empty($properties['token'])) {
+            $this->setToken($properties['token']);
+        }
+
+        return $this;
+    }
+
+
     public function getToken()
     {
         return $this->token;
@@ -78,7 +115,7 @@ class Slack extends AbstractDispatcher
         }
 
         if (empty($this->username) || empty($this->channel) || empty($this->team)) {
-            throw new Exception('Twilio dispatcher requires Username, Channel & Team to be set');
+            throw new Exception('Slack dispatcher requires Username, Channel & Team to be set');
         }
 
         $slack = new SlackService();

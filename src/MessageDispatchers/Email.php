@@ -18,6 +18,66 @@ class Email extends AbstractDispatcher
         $this->message = \Swift_Message::newInstance();
     }
 
+    public function get()
+    {
+        return array(
+            'message'       => $this->getMessage(),
+            'transport'     => $this->getTransport(),
+            'subject'       => $this->getSubject(),
+            'from'          => $this->getFrom(),
+            'to'            => $this->getTo(),
+            'reply_to'      => $this->getReplyTo(),
+            'content_type'  => $this->getContentType(),
+            'body'          => $this->getBody(),
+        );
+    }
+
+    public function set($properties)
+    {
+        if (isset($properties['message'])) {
+            $this->setMessage($properties['message']);
+        }
+
+        if (isset($properties['transport']) && is_array($properties['transport'])) {
+            $type = isset($properties['transport']['type']) ? $properties['transport']['type'] : 'smtp';
+            $options = isset($properties['transport']['options']) ? $properties['transport']['options'] : array();
+
+            $this->setTransport($type, $options);
+        }
+
+        if (!empty($properties['subject'])) {
+            $this->setSubject($properties['subject']);
+        }
+
+        if (!empty($properties['from'])) {
+            $from = is_array($properties['from']) ? $properties['from'] : array($properties['from']);
+
+            $this->setFrom($from);
+        }
+
+        if (!empty($properties['to'])) {
+            $to = is_array($properties['to']) ? $properties['to'] : array($properties['to']);
+
+            $this->setTo($to);
+        }
+
+        if (!empty($properties['reply_to'])) {
+            $reply_to = is_array($properties['reply_to']) ? $properties['reply_to'] : array($properties['reply_to']);
+
+            $this->setReplyTo($reply_to);
+        }
+
+        if (!empty($properties['content_type'])) {
+            $this->setContentType($properties['content_type']);
+        }
+
+        if (!empty($properties['body'])) {
+            $this->setBody($properties['body']);
+        }
+
+        return $this;
+    }
+
     public function getMessage()
     {
         return $this->message;
@@ -71,6 +131,9 @@ class Email extends AbstractDispatcher
                 $class = '\\' . $this->available_transports['mail'];
                 $this->transport = $class::newInstance();
                 break;
+
+            default:
+                throw new Exception('Email transport: ' . $type . ' is not supported');
         }
 
         return $this;

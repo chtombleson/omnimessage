@@ -10,7 +10,7 @@ Omnimessage can be installed via [composer](http://getcomposer.org)
 Add the following to your composer.json file
 
     "require": {
-            "chtombleson\omnimessage": "dev-master"
+            "chtombleson\omnimessage": "~0.1"
     }
 
 Then run `composer update`
@@ -31,13 +31,77 @@ Using Omnimessage is pretty straight forward, see example below.
 
 ### Omnimessage::create(string $message_dispatcher)
 
+Create a new instance of a dispatcher.
+
 Parameter: string message_dispatcher, type of message dispatcher you want (Email etc)
 
 Return: Omnimessage\MessageDispatchers, message dispacther object
 
+### Omnimessage::createMulti(array $dispatchers, array $options)
+
+Create a new instance of the MultiDispatcher.
+
+Parameter: array dispacthers, array of message dispatchers you want to create
+
+Parameter: array options, array of dispatcher options
+
+Return: Omnimessage\MultiDispatcher
+
 ### Omnimessage::getMessageDispatchers()
 
+Get an array of all available message dispatchers.
+
 Return: array, array of available message dispatchers
+
+## Omnimessage\MultiDispatcher API
+
+Omnimessage\MultiDispatcher allows you to send a message via
+different message dispatchers easily.
+
+### Documentation
+
+  * [MultiDispatcher](https://github.com/chtombleson/omnimessage/blob/master/docs/multidispatcher.md)
+
+### Example useage
+
+    <?php
+    require_once(__DIR__ . '/vendor/autoload.php');
+
+    use Omnimessage\Omnimessage;
+
+    // Create a MultiDispatcher instance
+    // With email and slack dispatcher
+    $multi = Omnimessage::createMulti(
+        array('Email', 'Slack'), // Use Email and Slack dispatchers
+        array(
+            // Email options
+            'Email' => array(
+                'body'  => 'test email',
+                'to'    => 'test@example.com',
+                'from'  => 'no-reply@example.com',
+                'subject' => 'Multi dispatcher test',
+                'transport' => array(
+                    'type' => 'smtp',
+                    'options' => array(
+                        'host' => 'localhost',
+                        'port' => 25,
+                    ),
+                ),
+            ),
+            // Slack options
+            'Slack' => array(
+                'body'      => 'test slack',
+                'username'  => 'slack-bot',
+                'channel'   => 'test',
+                'team'      => 'test',
+                'token'     => 'api token',
+            ),
+        )
+    );
+
+    // Send the messages
+    $multi->send();
+
 
 ## Omnimessage\MessageDispatchers API
 
@@ -50,6 +114,8 @@ Return: array, array of available message dispatchers
 All message dispatchers must extend Omnimessage\MessageDispatchers\AbstractDispatcher
 and implement the following methods.
 
+  * get()
+  * set(array $properties)
   * getBody()
   * setBody(string $body)
   * send()

@@ -17,6 +17,30 @@ class OmnimessageTest extends \PHPUnit_Framework_TestCase
         }
     }
 
+    public function testCreateMulti()
+    {
+        $multi = Omnimessage::createMulti(
+            array('Email'),
+            array(
+                'Email' => array(
+                    'body'      => 'test',
+                    'subject'   => 'test',
+                    'from'      => 'test@example.com',
+                    'to'        => 'testing@example.com',
+                    'transport' => array(
+                        'type'    => 'smtp',
+                        'options' => array(
+                            'host' => 'localhost',
+                            'port' => 25,
+                        ),
+                    ),
+                ),
+            )
+        );
+
+        $this->assertInstanceOf('Omnimessage\\MultiDispatcher', $multi);
+    }
+
     public function testGetMessageDispatchers()
     {
         $message_dispatchers = Omnimessage::getMessageDispatchers();

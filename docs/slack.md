@@ -6,6 +6,20 @@ Send a message via Slack.
 
 Namespace: Omnimessage\MessageDispatchers\Slack
 
+### get()
+
+Get the properties of the dispatcher.
+
+Return: array of properties
+
+### set(array $properties)
+
+Set the properties of the dispatcher.
+
+Parameter: array properties, array of properties to set on the dispatcher
+
+Return: Omnimessage\MessageDispatchers\Slack
+
 ### getToken()
 
 Return: string, Slack API token

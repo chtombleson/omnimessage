@@ -11,6 +11,43 @@ class Twilio extends AbstractDispatcher
     private $from;
     private $to;
 
+    public function get()
+    {
+        return array(
+            'body'          => $this->getBody(),
+            'account_sid'   => $this->getAccountSid(),
+            'auth_token'    => $this->getAuthToken(),
+            'from'          => $this->getFrom(),
+            'to'            => $this->getTo(),
+        );
+    }
+
+    public function set($properties)
+    {
+        if (!empty($properties['body'])) {
+            $this->setBody($properties['body']);
+        }
+
+        if (!empty($properties['account_sid'])) {
+            $this->setAccountSid($properties['account_sid']);
+        }
+
+        if (!empty($properties['auth_token'])) {
+            $this->setAuthToken($properties['auth_token']);
+        }
+
+        if (!empty($properties['from'])) {
+            $this->setFrom($properties['from']);
+        }
+
+        if (!empty($properties['to'])) {
+            $this->setTo($properties['to']);
+        }
+
+        return $this;
+    }
+
+
     public function getAccountSid()
     {
         return $this->account_sid;

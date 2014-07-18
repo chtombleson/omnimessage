@@ -14,7 +14,7 @@ Omnimessage documentation.
 Install via composer, add the following to your composer.json.
 
     "require": {
-        "chtombleson\omnimessage": "dev-master"
+        "chtombleson\omnimessage": "~0.1"
     }
 
 Run `composer install`
