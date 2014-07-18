@@ -26,10 +26,6 @@ class Omnimessage
 
     public static function createMulti($message_dispatchers, $options)
     {
-        $message_dispatchers = array_filter($message_dispatchers, function($dispatcher) {
-            return in_array($dispatcher, self::getMessageDispatchers());
-        });
-
         return new MultiDispatcher($message_dispatchers, $options);
     }
 
