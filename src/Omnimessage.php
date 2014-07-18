@@ -19,7 +19,7 @@ class Omnimessage
             return new $class();
         } else {
             throw new Exception(
-                'Message Dispatcher: ' . $message_dispather . ' does not exist'
+                'Message Dispatcher: ' . $message_dispatcher . ' does not exist'
             );
         }
     }
