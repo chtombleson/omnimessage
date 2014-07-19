@@ -108,6 +108,7 @@ different message dispatchers easily.
   * [Email](https://github.com/chtombleson/omnimessage/blob/master/docs/email.md)
   * [Twilio](https://github.com/chtombleson/omnimessage/blob/master/docs/twilio.md)
   * [Slack](https://github.com/chtombleson/omnimessage/blob/master/docs/slack.md)
+  * [HipChat](https://github.com/chtombleson/omnimessage/blob/master/docs/hipchat.md)
 
 ## Creating a message dispatcher
 

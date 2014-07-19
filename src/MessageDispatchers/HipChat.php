@@ -95,6 +95,14 @@ class HipChat extends AbstractDispatcher
 
     public function setColor($color)
     {
+        $colors = array('yellow', 'red', 'green', 'purple', 'gray', 'random');
+
+        if (!in_array($color, $colors)) {
+            throw new Exception(
+                'HipChat color can only be one of the following: ' . join(', ', $colors)
+            );
+        }
+
         $this->color = $color;
         return $this;
     }
