@@ -8,16 +8,16 @@ $message_dispatcher = Omnimessage::create('Slack');
 $token = 'token';
 $channel = 'channel';
 $username = 'username';
-$team = 'test';
+$team = 'team';
 
-$msg = $message_dispatcher->setToken($token)
+$sent = $message_dispatcher->setToken($token)
     ->setTeam($team)
     ->setChannel($channel)
     ->setUsername($username)
     ->setBody('Test sms')
     ->send();
 
-if ($msg['ok']) {
+if ($sent) {
     echo "Message sent\n";
 } else {
     echo "Message not sent\n";

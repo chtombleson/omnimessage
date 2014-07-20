@@ -1,6 +1,8 @@
 <?php
 namespace Omnimessage\Service;
 
+use GuzzleHttp\Client;
+
 class Twilio
 {
     private $account_sid;
@@ -58,21 +60,18 @@ class Twilio
 
     private function sendData($url, $data)
     {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERPWD, $this->getAccountSid() . ':' . $this->getAuthToken());
+        $client = new Client();
+        $response = $client->post(
+            $url,
+            array(
+                'body' => $data,
+                'auth' => array(
+                    $this->getAccountSid(),
+                    $this->getAuthToken(),
+                ),
+            )
+        );
 
-        $response = curl_exec($ch);
-
-        if (curl_error($ch)) {
-            throw new Exception('Twilio curl error: ' . curl_error($ch));
-        }
-
-        curl_close($ch);
-
-        return json_decode($response, true);
+        return $response->json();
     }
 }

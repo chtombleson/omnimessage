@@ -1,6 +1,8 @@
 <?php
 namespace Omnimessage\Service;
 
+use GuzzleHttp\Client;
+
 class HipChat
 {
     private $token;
@@ -48,7 +50,7 @@ class HipChat
         $api_url  = 'https://api.hipchat.com/v2/room/' . $this->getRoom() . '/notification';
         $api_url .= '?auth_token=' . $this->getToken();
 
-        $response = $this->sendData($api_url, json_encode($hipchat_data));
+        $response = $this->sendData($api_url, $hipchat_data);
 
         if ($response != 204) {
             throw new Exception('HipChat returned http code: ' . $response);
@@ -59,25 +61,18 @@ class HipChat
 
     private function sendData($url, $data)
     {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Content-Type: application/json',
-            'Content-Length: ' . strlen($data),
-        ));
+        $client = new Client();
+        $response = $client->post(
+            $url,
+            array(
+                'headers' => array(
+                    'Content-Type' => 'application/json',
+                    'Content-Length' => strlen(json_encode($data)),
+                ),
+                'body' => json_encode($data),
+            )
+        );
 
-        $response = curl_exec($ch);
-
-        if (curl_error($ch)) {
-            throw new Exception('HipChat curl error: ' . curl_error($ch));
-        }
-
-        $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-
-        return $status;
+        return $response->getStatusCode();
     }
 }

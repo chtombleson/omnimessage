@@ -1,6 +1,8 @@
 <?php
 namespace Omnimessage\Service;
 
+use GuzzleHttp\Client;
+
 class Slack
 {
     private $token;
@@ -39,29 +41,23 @@ class Slack
 
         $response = $this->sendData($api_url, $slack_data);
 
-        if (!$response['ok']) {
-            throw new Exception('Slack error: ' . $response['error']);
+        if ($response != 200) {
+            throw new Exception('Slack POST error');
         }
 
-        return $response;
+        return true;
     }
 
     private function sendData($url, $data)
     {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $client = new Client();
+        $response = $client->post(
+            $url,
+            array(
+                'body' => $data,
+            )
+        );
 
-        $response = curl_exec($ch);
-
-        if (curl_error($ch)) {
-            throw new Exception('Slack curl error: ' . curl_error($ch));
-        }
-
-        curl_close($ch);
-
-        return json_decode($response, true);
+        return $response->getStatusCode();
     }
 }
