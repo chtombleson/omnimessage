@@ -28,6 +28,7 @@ Documentation is in the docs directory.
   * [Twilio API](https://github.com/chtombleson/omnimessage/blob/master/docs/twilio.md)
   * [Slack API](https://github.com/chtombleson/omnimessage/blob/master/docs/slack.md)
   * [HipChat API](https://github.com/chtombleson/omnimessage/blob/master/docs/hipchat.md)
+  * [Web API](https://github.com/chtombleson/omnimessage/blob/master/docs/web.md)
 
 ### Examples
 
