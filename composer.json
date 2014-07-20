@@ -10,6 +10,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
+        "php": ">=5.4",
         "swiftmailer/swiftmailer": "@stable",
         "symfony/finder": "2.5.*",
         "guzzlehttp/guzzle": "~4.0"
