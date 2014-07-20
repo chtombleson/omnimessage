@@ -5,6 +5,7 @@ use Omnimessage\Exception;
 
 class Email extends AbstractDispatcher
 {
+    private $body;
     private $message;
     private $transport;
     private $available_transports = array(

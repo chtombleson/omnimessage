@@ -6,6 +6,7 @@ use Omnimessage\Service\Twilio as TwilioService;
 
 class Twilio extends AbstractDispatcher
 {
+    private $body;
     private $account_sid;
     private $auth_token;
     private $from;
