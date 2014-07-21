@@ -8,12 +8,12 @@ $room  = 'room';
 
 $hipchat = Omnimessage::create('HipChat');
 
-$sent = $hipchat->setToken($token)
+$hipchat->setToken($token)
     ->setRoom($room)
     ->setBody('hello world')
     ->send();
 
-if ($sent) {
+if ($hipchat->isSuccessful()) {
     echo "Message sent\n";
 } else {
     echo "Message not sent\n";

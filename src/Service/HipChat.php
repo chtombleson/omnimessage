@@ -52,11 +52,11 @@ class HipChat
 
         $response = $this->sendData($api_url, $hipchat_data);
 
-        if ($response != 204) {
-            throw new Exception('HipChat returned http code: ' . $response);
+        if ($response->getStatusCode() != 204) {
+            throw new Exception('HipChat returned http code: ' . $response->getStatusCode());
         }
 
-        return true;
+        return $repsonse;
     }
 
     private function sendData($url, $data)
@@ -73,6 +73,6 @@ class HipChat
             )
         );
 
-        return $response->getStatusCode();
+        return $response;
     }
 }

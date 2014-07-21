@@ -41,11 +41,11 @@ class Slack
 
         $response = $this->sendData($api_url, $slack_data);
 
-        if ($response != 200) {
+        if ($response->getStatusCode() != 200) {
             throw new Exception('Slack POST error');
         }
 
-        return true;
+        return $response;
     }
 
     private function sendData($url, $data)
@@ -58,6 +58,6 @@ class Slack
             )
         );
 
-        return $response->getStatusCode();
+        return $response;
     }
 }

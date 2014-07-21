@@ -25,18 +25,13 @@ class Web
         }
 
         $response = $this->sendData($data);
-
-        if ($response != 200) {
-            return false;
-        }
-
-        return true;
+        return $response;
     }
 
     private function sendData($data)
     {
         $client = new Client();
-        $reponse = $client->post(
+        $response = $client->post(
             $this->getUrl(),
             array(
                 'headers' => array(
@@ -46,6 +41,6 @@ class Web
             )
         );
 
-        return $response->getStatusCode();
+        return $response;
     }
 }

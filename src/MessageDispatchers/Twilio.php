@@ -11,6 +11,7 @@ class Twilio extends AbstractDispatcher
     private $auth_token;
     private $from;
     private $to;
+    private $response;
 
     public function get()
     {
@@ -104,6 +105,11 @@ class Twilio extends AbstractDispatcher
         return $this;
     }
 
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
     public function send()
     {
         if (empty($this->body)) {
@@ -127,6 +133,12 @@ class Twilio extends AbstractDispatcher
                 'body'  => $this->getBody(),
             ));
 
-        return $response;
+        $this->response = $response;
+        return $this;
+    }
+
+    public function isSuccessful()
+    {
+        return !in_array($json['status'], array(400, 401, 404));
     }
 }

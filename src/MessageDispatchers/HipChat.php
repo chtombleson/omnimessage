@@ -9,6 +9,7 @@ class HipChat extends AbstractDispatcher
     private $token;
     private $room;
     private $body;
+    private $response;
     private $format = 'html';
     private $color = 'yellow';
     private $notify = false;
@@ -129,6 +130,11 @@ class HipChat extends AbstractDispatcher
         return $this;
     }
 
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
     public function send()
     {
         if (empty($this->body)) {
@@ -149,6 +155,12 @@ class HipChat extends AbstractDispatcher
                 'format' => $this->getFormat(),
             ));
 
-        return $response;
+        $this->response = $response;
+        return $this;
+    }
+
+    public function isSuccessful()
+    {
+        return ($this->response->getStatusCode() == 204);
     }
 }

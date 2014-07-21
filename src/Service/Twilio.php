@@ -50,9 +50,10 @@ class Twilio
         $api_url .= $this->getAccountSid() . '/SMS/Messages.json';
 
         $response = $this->sendData($api_url, $twilio_data);
+        $json = $response->json();
 
-        if (in_array($response['status'], array(400, 401, 404))) {
-            throw new Exception('Twilio error: ' . $response['detail']);
+        if (in_array($json['status'], array(400, 401, 404))) {
+            throw new Exception('Twilio error: ' . $json['detail']);
         }
 
         return $response;
@@ -72,6 +73,6 @@ class Twilio
             )
         );
 
-        return $response->json();
+        return $response;
     }
 }

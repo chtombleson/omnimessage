@@ -8,6 +8,7 @@ class Email extends AbstractDispatcher
     private $body;
     private $message;
     private $transport;
+    private $successful;
     private $available_transports = array(
         'smtp'      => 'Swift_SmtpTransport',
         'send_mail' => 'Swift_SendmailTransport',
@@ -206,9 +207,20 @@ class Email extends AbstractDispatcher
         return $this;
     }
 
+    public function getResponse()
+    {
+        return null;
+    }
+
     public function send()
     {
         $mailer = \Swift_Mailer::newInstance($this->transport);
-        return $mailer->send($this->message);
+        $this->successful = $mailer->send($this->message);
+        return $this;
+    }
+
+    public function isSuccessful()
+    {
+        return $this->successful;
     }
 }

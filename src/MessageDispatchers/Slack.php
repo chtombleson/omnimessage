@@ -11,6 +11,7 @@ class Slack extends AbstractDispatcher
     private $channel;
     private $team;
     private $token;
+    private $response;
 
     public function get()
     {
@@ -104,6 +105,11 @@ class Slack extends AbstractDispatcher
         return $this;
     }
 
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
     public function send()
     {
         if (empty($this->body)) {
@@ -127,6 +133,12 @@ class Slack extends AbstractDispatcher
                 'team' => $this->getTeam(),
             ));
 
-        return $response;
+        $this->response = $response;
+        return $this;
+    }
+
+    public function isSuccessful()
+    {
+        return ($this->response->getStatusCode() == 200);
     }
 }

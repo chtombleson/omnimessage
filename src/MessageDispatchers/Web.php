@@ -7,6 +7,7 @@ class Web extends AbstractDispatcher
 {
     private $url;
     private $body;
+    private $response;
 
     public function get()
     {
@@ -51,6 +52,11 @@ class Web extends AbstractDispatcher
         return $this;
     }
 
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
     public function send()
     {
         $web = new WebService();
@@ -58,6 +64,12 @@ class Web extends AbstractDispatcher
         $response = $web->setUrl($this->getUrl())
             ->send($this->getBody());
 
-        return $response;
+        $this->response = $response;
+        return $this;
+    }
+
+    public function isSuccessful()
+    {
+        return ($this->response->getStatusCode() == 200);
     }
 }
