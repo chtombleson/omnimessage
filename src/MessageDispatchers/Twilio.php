@@ -7,11 +7,15 @@ use Omnimessage\Service\Twilio as TwilioService;
 class Twilio extends AbstractDispatcher
 {
     private $body;
-    private $account_sid;
-    private $auth_token;
     private $from;
     private $to;
     private $response;
+    private $twilio_service;
+
+    public function __construct()
+    {
+        $this->twilio_service = new TwilioService();
+    }
 
     public function get()
     {
@@ -52,23 +56,23 @@ class Twilio extends AbstractDispatcher
 
     public function getAccountSid()
     {
-        return $this->account_sid;
+        return $this->twilio_service->getAccountSid();
     }
 
     public function setAccountSid($account_sid)
     {
-        $this->account_sid = $account_sid;
+        $this->twilio_service->setAccountSid($account_sid);
         return $this;
     }
 
     public function getAuthToken()
     {
-        return $this->auth_token;
+        return $this->twilio_service->getAuthToken();
     }
 
     public function setAuthToken($auth_token)
     {
-        $this->auth_token = $auth_token;
+        $this->twilio_service->setAuthToken($auth_token);
         return $this;
     }
 
@@ -125,13 +129,13 @@ class Twilio extends AbstractDispatcher
         }
 
         $twilio = new TwilioService();
-        $response = $twilio->setAccountSid($this->getAccountSid())
-            ->setAuthToken($this->getAuthToken())
-            ->send(array(
+        $response = $this->twilio_service->send(
+            array(
                 'from'  => $this->getFrom(),
                 'to'    => $this->getTo(),
                 'body'  => $this->getBody(),
-            ));
+            )
+        );
 
         $this->response = $response;
         return $this;

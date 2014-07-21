@@ -10,8 +10,13 @@ class Slack extends AbstractDispatcher
     private $username;
     private $channel;
     private $team;
-    private $token;
     private $response;
+    private $slack_service;
+
+    public function __construct()
+    {
+        $this->slack_service = new SlackService();
+    }
 
     public function get()
     {
@@ -52,12 +57,12 @@ class Slack extends AbstractDispatcher
 
     public function getToken()
     {
-        return $this->token;
+        return $this->slack_service->getToken();
     }
 
     public function setToken($token)
     {
-        $this->token = $token;
+        $this->slack_service->setToken($token);
         return $this;
     }
 
@@ -124,14 +129,14 @@ class Slack extends AbstractDispatcher
             throw new Exception('Slack dispatcher requires Username, Channel & Team to be set');
         }
 
-        $slack = new SlackService();
-        $response = $slack->setToken($this->getToken())
-            ->send(array(
+        $response = $this->slack_service->send(
+            array(
                 'body' => $this->getBody(),
                 'username' => $this->getUsername(),
                 'channel' => $this->getChannel(),
                 'team' => $this->getTeam(),
-            ));
+            )
+        );
 
         $this->response = $response;
         return $this;

@@ -5,9 +5,14 @@ use Omnimessage\Service\Web as WebService;
 
 class Web extends AbstractDispatcher
 {
-    private $url;
     private $body;
     private $response;
+    private $web_service;
+
+    public function __construct()
+    {
+        $this->web_service = new WebService();
+    }
 
     public function get()
     {
@@ -32,12 +37,12 @@ class Web extends AbstractDispatcher
 
     public function getUrl()
     {
-        return $this->url;
+        return $this->web_service->getUrl();
     }
 
     public function setUrl($url)
     {
-        $this->url = $url;
+        $this->web_service->setUrl($url);
         return $this;
     }
 
@@ -61,8 +66,7 @@ class Web extends AbstractDispatcher
     {
         $web = new WebService();
 
-        $response = $web->setUrl($this->getUrl())
-            ->send($this->getBody());
+        $response = $this->web_service->send($this->getBody());
 
         $this->response = $response;
         return $this;

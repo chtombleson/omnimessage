@@ -6,13 +6,17 @@ use Omnimessage\Service\HipChat as HipChatService;
 
 class HipChat extends AbstractDispatcher
 {
-    private $token;
-    private $room;
     private $body;
     private $response;
     private $format = 'html';
     private $color = 'yellow';
     private $notify = false;
+    private $hipchat_service;
+
+    public function __construct()
+    {
+        $this->hipchat_service = new HipChatService();
+    }
 
     public function get()
     {
@@ -58,23 +62,23 @@ class HipChat extends AbstractDispatcher
 
     public function getToken()
     {
-        return $this->token;
+        return $this->hipchat_service->getToken();
     }
 
     public function setToken($token)
     {
-        $this->token = $token;
+        $this->hipchat_service->setToken($token);
         return $this;
     }
 
     public function getRoom()
     {
-        return $this->room;
+        return $this->hipchat_service->getRoom();
     }
 
     public function setRoom($room)
     {
-        $this->room = $room;
+        $this->hipchat_service->setRoom($room);
         return $this;
     }
 
@@ -145,15 +149,14 @@ class HipChat extends AbstractDispatcher
             throw new Exception('HipChat dispatcher requires Token & Room to be set');
         }
 
-        $hipchat = new HipChatService();
-        $response = $hipchat->setToken($this->getToken())
-            ->setRoom($this->getRoom())
-            ->send(array(
+        $response = $this->hipchat_service->send(
+            array(
                 'body'   => $this->getBody(),
                 'color'  => $this->getColor(),
                 'notify' => $this->getNotify(),
                 'format' => $this->getFormat(),
-            ));
+            )
+        );
 
         $this->response = $response;
         return $this;
