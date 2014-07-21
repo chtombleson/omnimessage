@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
-    <title>Omnimessage by chtombleson</title>
+    <title>Omnimessage | Send messages easily</title>
 </head>
 <body>
 
@@ -48,11 +48,325 @@
 
             <ul>
                 <li>Email</li>
-                <li><a href="http://hipchat.com">HipChat</a></li>
-                <li><a href="http://slack.com">Slack</a></li>
-                <li><a href="http://twilio.com">Twilio</a></li>
+                <li>HipChat</li>
+                <li>Slack</li>
+                <li>Twilio</li>
                 <li>Web</li>
             </ul>
+
+            <h2>
+                <a name="documentation" class="anchor" href="#documentation">
+                    <span class="octicon octicon-link"></span>
+                </a>
+                Documentation
+            </h2>
+
+            <p>For the full API documentation see the following links:</p>
+
+            <ul>
+                <li><a href="https://github.com/chtombleson/omnimessage/blob/master/docs/index.md">Getting started</a></li>
+                <li><a href="https://github.com/chtombleson/omnimessage/blob/master/docs/email.md">Email API</a></li>
+                <li><a href="https://github.com/chtombleson/omnimessage/blob/master/docs/hipchat.md">HipChat API</a></li>
+                <li><a href="https://github.com/chtombleson/omnimessage/blob/master/docs/slack.md">Slack API</a></li>
+                <li><a href="https://github.com/chtombleson/omnimessage/blob/master/docs/twilio.md">Twilio API</a></li>
+                <li><a href="https://github.com/chtombleson/omnimessage/blob/master/docs/web.md">Web API</a></li>
+            </ul>
+
+            <h2>
+                <a name="tutorial" class="anchor" href="#tutorial">
+                    <span class="octicon octicon-link"></span>
+                </a>
+                Tutorial
+            </h2>
+
+            <h3>
+                Installing Omnimessage
+            </h3>
+
+            <p>
+                Omnimessage requires PHP 5.4+
+            </p>
+
+            <p>
+                Omnimessage can be installed via <a href="http://getcomposer.org" title="composer">composer</a> add
+                the following to your composer.json file.
+            </p>
+
+            <pre><code>"require": {
+    "chtombleson/omnimessage": "~0.1"
+}</code></pre>
+
+            <h3>Using Omnimessage</h3>
+
+            <p>
+                Omnimessage has a straight forward and easy to understand API.
+            </p>
+
+            <h4>Sending an Email</h4>
+
+            <p>
+                The Email dispatcher can be used to send emails. It
+                uses the <a href="http://swiftmailer.org" title="swift mailer">Swift Mailer</a> library to send emails.
+            </p>
+
+            <p>
+                The Email dispatcher support the following Transports:
+            </p>
+
+            <ul>
+                <li>Smtp</li>
+                <li>Send Mail</li>
+                <li>Mail (PHP Mail)</li>
+            </ul>
+
+            <p>
+                The code below shows how you can send an email via an smtp server.
+            </p>
+
+            <pre><code>&lt;?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+use Omnimessage\Omnimessage;
+
+// Create an Email dispatcher
+$email = Omnimessage::create('Email');
+
+// Set the transport to SMTP &amp; set the SMTP host and port
+$email-&gt;setTransport(
+    'smtp',
+    array(
+        'host' =&gt; 'localhost',
+        'port' =&gt; 25,
+    )
+);
+
+// You can also set the username &amp; password for the SMTP server
+$email-&gt;setTransport(
+    'smtp',
+    array(
+        'host' =&gt; 'localhost',
+        'port' =&gt; 25,
+        'username' =&gt; 'user',
+        'password' =&gt; 'pass',
+    )
+);
+
+// Set the who you want to send the email To
+$email-&gt;setTo(
+    array(
+        // Format 'email' =&gt; 'name'
+        'test@example.com' =&gt; 'Test User',
+    )
+);
+
+// Set From
+$email-&gt;setFrom(
+    array(
+        'test1@example.com' =&gt; 'Test User 1',
+    )
+);
+
+// Set the body of the email
+$email-&gt;setBody('Hello world');
+
+// Send the email
+$email-&gt;send();
+
+// Check if the email was sent successfully
+if ($email-&gt;isSuccessful()) {
+    echo "Email sent";
+} else {
+    echo "Email not sent";
+}
+</code></pre>
+
+            <h4>Send a message via HipChat</h4>
+
+            <p>
+                To send a message via <a href="http://hipchat.com" title="HipChat">HipChat</a> you will need a HipChat account &amp; api token.
+            </p>
+
+            <pre><code>&lt;?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+use Omnimessage\Omnimessage;
+
+// Create a HipChat dispatcher
+$hipchat = Omnimessage::create('HipChat');
+
+// Set the API Token
+$hipchat-&gt;setToken('{ api token }');
+
+// Set the room to send the message to
+$hipchat-&gt;setRoom('{ room }');
+
+// Set the body of the message
+$hipchat-&gt;setBody('Hello world');
+
+// Send the message
+hipchat-&gt;send();
+
+// Check if the message was sent successfully
+if ($hipchat-&gt;isSuccessful()) {
+    echo "Message sent";
+} else {
+    echo "Message not sent";
+}
+</code></pre>
+
+            <h4>Send a message via Slack</h4>
+
+            <p>
+                To send a message via <a href="http://slack.com" title="Slack">Slack</a> you will need a Slack account
+                &amp; API Token. You will also need to setup a webhook in Slack.
+            </p>
+
+            <pre><code>&lt;?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+use Omnimessage\Omnimessage;
+
+// Create a Slack dispatcher
+$slack = Omnimessage::create('Slack');
+
+// Set API Token
+$slack-&gt;setToken('Token');
+
+// Set team, the team is first part of your slack url
+// So team.slack.com the team is: team
+$slack-&gt;setTeam('team');
+
+// Set the channel to post to
+$slack-&gt;setChannel('#general');
+
+// Set username to post as
+$slack-&gt;setUsername('omnimessage');
+
+// Set the body of the message
+$slack-&gt;setBody('Test sms');
+
+// Send the message
+$slack-&gt;send();
+
+// Check if message was sent successfully
+if ($slack-&gt;isSuccessful()) {
+    echo "Message sent";
+} else {
+    echo "Message not sent";
+}
+</code></pre>
+
+            <h4>Send message via Twilio</h4>
+
+            <p>
+                To send a message via <a href="http://twilio.com" title="Twilio">Twilio</a> you will
+                need a Account SID &amp; Auth Token.
+            </p>
+
+            <pre><code>&lt;?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+use Omnimessage\Omnimessage;
+
+// Create a Twilio dispatcher
+$twilio = Omnimessage::create('Twilio');
+
+// Set the Account SID
+$twilio-&gt;setAccountSid('{ account sid }');
+
+// Set the Auth Token
+$twilio-&gt;setAuthToken('{ auth token }');
+
+// Set From phone number
+$twilio-&gt;setFrom('+0000000');
+
+// Set To phone number
+$twilio-&gt;setTo('+0000000');
+
+// Set the body of the message
+$twilio-&gt;setBody('Test sms');
+
+// Send the message
+$twilio-&gt;send();
+
+
+// Check if the message was sent successfully
+if ($twilio-&gt;isSuccessful()) {
+    echo "Message sent";
+} else {
+    echo "Message not sent";
+}
+</code></pre>
+
+            <h4>Send a message via the Web</h4>
+
+            <p>
+                This dispatcher uses a HTTP POST request to send a JSON payload
+                to a url.
+            </p>
+
+            <pre><code>&lt;?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+use Omnimessage\Omnimessage;
+
+// Create a Web dispatcher
+$web = Omnimessage::create('Web');
+
+// Set the URL to POST to
+$web-&gt;setUrl('http://example.com/web-message');
+
+// Set the body of the message (The json payload)
+$web-&gt;setBody(
+    array(
+        'message' =&gt; 'hello world',
+    )
+);
+
+// Send the json payload
+$web-&gt;send();
+
+// Check the message was sent successfully
+// The web dispacther is only successful
+// If the url it POST's to return a 200 status code
+if ($web-&gt;isSuccessful()) {
+    echo "Message sent";
+} else {
+    echo "Message not sent";
+}
+</code></pre>
+
+            <h2>
+                <a name="license" class="anchor" href="#license">
+                    <span class="octicon octicon-link"></span>
+                </a>
+                License
+            </h2>
+
+            <p>
+                The MIT License (MIT)<br/>
+                <br/>
+                Copyright (c) 2014 Christopher Tombleson<br/>
+                <br/>
+                Permission is hereby granted, free of charge, to any person obtaining a copy
+                of this software and associated documentation files (the "Software"), to deal
+                in the Software without restriction, including without limitation the rights
+                to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                copies of the Software, and to permit persons to whom the Software is
+                furnished to do so, subject to the following conditions:<br/>
+                <br/>
+                The above copyright notice and this permission notice shall be included in all
+                copies or substantial portions of the Software.<br/>
+                <br/>
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+                SOFTWARE.
+            </p>
+
         </section>
     </div>
 </body>
