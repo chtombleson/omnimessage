@@ -44,7 +44,7 @@ See examples directory.
   * [Email](https://github.com/chtombleson/omnimessage/blob/master/examples/email.php)
   * [HipChat](https://github.com/chtombleson/omnimessage/blob/master/examples/hipchat.php)
   * [Slack](https://github.com/chtombleson/omnimessage/blob/master/examples/slack.php)
-  * [Twilio](https://github.com/chtombleson/omnimessage/blob/master/examples/twilio.php)$
+  * [Twilio](https://github.com/chtombleson/omnimessage/blob/master/examples/twilio.php)
   * [Web](https://github.com/chtombleson/omnimessage/blob/master/examples/web.php)
 
 ## Tests
