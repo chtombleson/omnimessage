@@ -3,21 +3,46 @@ namespace Omnimessage\Service;
 
 use GuzzleHttp\Client;
 
+/**
+ * Web hook service client
+ *
+ * @author Christopher Tombleson <chris@cribznetwork.com>
+ */
 class Web
 {
+    /**
+     * @var string
+     */
     private $url;
 
+    /**
+     * Get url
+     *
+     * @return string
+     */
     public function getUrl()
     {
         return $this->url;
     }
 
+    /**
+     * Set url
+     *
+     * @param string $url
+     * @return Omnimessage\Service\Web
+     */
     public function setUrl($url)
     {
         $this->url = $url;
         return $this;
     }
 
+    /**
+     * Send message to the url
+     *
+     * @param array $data
+     * @return GuzzleHttp\Message\Response
+     */
     public function send($data)
     {
         if (empty($this->url)) {

@@ -3,21 +3,46 @@ namespace Omnimessage\Service;
 
 use GuzzleHttp\Client;
 
+/**
+ * Slack web service client
+ *
+ * @author Christopher Tombleson <chris@cribznetwork.com>
+ */
 class Slack
 {
+    /**
+     * @var string
+     */
     private $token;
 
+    /**
+     * Get Slack token
+     *
+     * @return string
+     */
     public function getToken()
     {
         return $this->token;
     }
 
+    /**
+     * Set Slack token
+     *
+     * @param string $token
+     * @return Omnimessage\Service\Slack
+     */
     public function setToken($token)
     {
         $this->token = $token;
         return $this;
     }
 
+    /**
+     * Send message to Slack web service
+     *
+     * @param array $data
+     * @return GuzzleHttp\Message\Response
+     */
     public function send($data)
     {
         if (empty($this->token)) {

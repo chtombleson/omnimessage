@@ -3,33 +3,73 @@ namespace Omnimessage\Service;
 
 use GuzzleHttp\Client;
 
+/**
+ * HipChat web service client
+ *
+ * @author Christopher Tombleson <chris@cribznetwork.com>
+ */
 class HipChat
 {
+    /**
+     * @var string
+     */
     private $token;
+
+    /**
+     * @var string
+     */
     private $room;
 
+    /**
+     * Get HipChat token
+     *
+     * @return string
+     */
     public function getToken()
     {
         return $this->token;
     }
 
+    /**
+     * Set HipChat token
+     *
+     * @param string $token
+     * @return Omnimessage\Service\HipChat
+     */
     public function setToken($token)
     {
         $this->token = $token;
         return $this;
     }
 
+    /**
+     * Get HipChat room
+     *
+     * @return string
+     */
     public function getRoom()
     {
         return $this->room;
     }
 
+    /**
+     * Set HipChat room
+     *
+     * @param string $room
+     * @return Omnimessage\Service\HipChat
+     */
     public function setRoom($room)
     {
         $this->room = $room;
         return $this;
     }
 
+    /**
+     * Send message to HipChat web service
+     *
+     * @param array $data
+     * @return GuzzleHttp\Message\Response
+     */
     public function send($data)
     {
         if (empty($this->token) && empty($this->room)) {

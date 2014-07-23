@@ -1,11 +1,29 @@
 <?php
 namespace Omnimessage;
 
+/**
+ * Send bulk messages easily
+ *
+ * @author Christopher Tombleson <chris@cribznetwork.com>
+ */
 class MultiDispatcher
 {
+    /**
+     * @var array
+     */
     private $dispatchers;
+
+    /**
+     * @var array
+     */
     private $options;
 
+    /**
+     * Create a new MultiDispatcher instance
+     *
+     * @param array $dispatchers
+     * @param array $options
+     */
     public function __construct($dispatchers, $options)
     {
         if (empty($dispacthers) && empty($options)) {
@@ -18,11 +36,24 @@ class MultiDispatcher
         $this->setDispatchers($dispatchers);
     }
 
+    /**
+     * Get a message dispatcher by name
+     *
+     * @param string $dispatcher
+     * @return Omnimessage\MessageDispatchers\AbstractDispatcher
+     */
     public function getDispatcher($dispatcher)
     {
         return isset($this->dispatchers[$dispatcher]) ? $this->dispatchers[$dispatcher] : null;
     }
 
+    /**
+     * Set a message dispatcher
+     *
+     * @param string $dispatcher
+     * @param array $options
+     * @return Omnimessage\MultiDispatcher
+     */
     public function setDispatcher($dispatcher, $options)
     {
         if (!isset($this->dispatchers[$dispatcher])) {
@@ -37,12 +68,18 @@ class MultiDispatcher
         return $this;
     }
 
+    /**
+     * Send the messages
+     *
+     * @return array
+     */
     public function send()
     {
         $return_vals = array();
 
         foreach ($this->dispatchers as $name => $dispatcher) {
-           $return_vals[$name] = $dispatcher->send();
+           $dispatcher->send();
+           $return_vals[$name] = $dispatcher->isSuccessful();
         }
 
         return $return_vals;

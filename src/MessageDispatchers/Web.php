@@ -3,17 +3,39 @@ namespace Omnimessage\MessageDispatchers;
 
 use Omnimessage\Service\Web as WebService;
 
+/**
+ * Web message dispatchers
+ *
+ * @author Christopher Tombleson <chris@cribznetwork.com>
+ */
 class Web extends AbstractDispatcher
 {
+    /**
+     * @var array
+     */
     private $body;
+
+    /**
+     * @var GuzzleHttp\Message\Response
+     */
     private $response;
+
+    /**
+     * @var Omnimessage\Service\Web
+     */
     private $web_service;
 
+    /**
+     * Create a new Web message dispatcher
+     */
     public function __construct()
     {
         $this->web_service = new WebService();
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function get()
     {
         return array(
@@ -22,6 +44,9 @@ class Web extends AbstractDispatcher
         );
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function set($properties)
     {
         if (!empty($properties['url'])) {
@@ -35,33 +60,56 @@ class Web extends AbstractDispatcher
         return $this;
     }
 
+    /**
+     * Get url
+     *
+     * @return string
+     */
     public function getUrl()
     {
         return $this->web_service->getUrl();
     }
 
+    /**
+     * Set url
+     *
+     * @param string $url
+     * @return Omnimessage\MessageDispatchers\Web
+     */
     public function setUrl($url)
     {
         $this->web_service->setUrl($url);
         return $this;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getBody()
     {
         return $this->body;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function setBody($body)
     {
         $this->body = $body;
         return $this;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getResponse()
     {
         return $this->response;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function send()
     {
         $web = new WebService();
@@ -72,6 +120,9 @@ class Web extends AbstractDispatcher
         return $this;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function isSuccessful()
     {
         return ($this->response->getStatusCode() == 200);

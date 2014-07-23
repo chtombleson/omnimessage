@@ -3,8 +3,19 @@ namespace Omnimessage;
 
 use Symfony\Component\Finder\Finder;
 
+/**
+ * Core class used to create message dispatchers
+ *
+ * @author Christopher Tombleson <chris@cribznetwork.com>
+ */
 class Omnimessage
 {
+    /**
+     * Create a message dispatcher
+     *
+     * @param string $message_dispatcher
+     * @return Omnimessage\MessageDispatcher\AbstractDispatcher
+     */
     public static function create($message_dispatcher)
     {
         if (!in_array($message_dispatcher, self::getMessageDispatchers())) {
@@ -24,11 +35,23 @@ class Omnimessage
         }
     }
 
+    /**
+     * Create a multi message dispatcher
+     *
+     * @param array $message_dispatchers
+     * @param array $options
+     * @return Omnimessage\MultiDispatcher
+     */
     public static function createMulti($message_dispatchers, $options)
     {
         return new MultiDispatcher($message_dispatchers, $options);
     }
 
+    /**
+     * Get names of all message dispatchers
+     *
+     * @return array
+     */
     public static function getMessageDispatchers()
     {
         $finder = new Finder();
