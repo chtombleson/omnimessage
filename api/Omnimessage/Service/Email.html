@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="robots" content="index, follow, all" />
-        <title>Omnimessage\Service\Twilio | Omnimessage API</title>
+        <title>Omnimessage\Service\Email | Omnimessage API</title>
                     <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
                             </head>
         <body id="class">
@@ -20,14 +20,14 @@
         <div id="title">Omnimessage API</div>
 
             <div class="type">Class</div>
-    <h1><a href="../../Omnimessage/Service.html">Omnimessage\Service</a>\Twilio</h1>
+    <h1><a href="../../Omnimessage/Service.html">Omnimessage\Service</a>\Email</h1>
     </div>
         <div class="content">
                 <p>    class
-    <strong>Twilio</strong>        extends <a href="../../Omnimessage/Service/AbstractService.html"><abbr title="Omnimessage\Service\AbstractService">AbstractService</abbr></a></p>
+    <strong>Email</strong>        extends <a href="../../Omnimessage/Service/AbstractService.html"><abbr title="Omnimessage\Service\AbstractService">AbstractService</abbr></a></p>
 
             <div class="description">
-            <p>Twilio web service client</p>
+            <p>Email service</p>
             <p>
 </p>
         </div>
@@ -40,51 +40,61 @@
             <table>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\Service\GuzzleHttp\Message\Response">Response</abbr>
+                    boolean
                 </td>
                 <td class="last">
                     <a href="#method_send">send</a>(array $data)
-                    <p>Send message to Twilio web service</p>
+                    <p>Send Email</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    string
+                    <abbr title="Omnimessage\Service\Swift_Message">Swift_Message</abbr>
                 </td>
                 <td class="last">
-                    <a href="#method_getAccountSid">getAccountSid</a>()
-                    <p>Get Twilio account sid</p>
+                    <a href="#method_getMessage">getMessage</a>()
+                    <p>Get message object</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\Service\Omnimessage\Service\Twilio">Twilio</abbr>
+                    <abbr title="Omnimessage\Service\Omnimessage\Service\Email">Email</abbr>
                 </td>
                 <td class="last">
-                    <a href="#method_setAccountSid">setAccountSid</a>(string $account_sid)
-                    <p>Set Twilio account sid</p>
+                    <a href="#method_setMessage">setMessage</a>(<abbr title="Omnimessage\Service\Swift_Message">Swift_Message</abbr> $message)
+                    <p>Set message object</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    string
+                    <abbr title="Omnimessage\Service\Swift_Transport">Swift_Transport</abbr>
                 </td>
                 <td class="last">
-                    <a href="#method_getAuthToken">getAuthToken</a>()
-                    <p>Get Twilio auth token</p>
+                    <a href="#method_getTransport">getTransport</a>()
+                    <p>Get transport object</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\Service\Omnimessage\MessageDispatchers\Twilio">Twilio</abbr>
+                    <abbr title="Omnimessage\Service\Omnimessage\Service\Email">Email</abbr>
                 </td>
                 <td class="last">
-                    <a href="#method_setAuthToken">setAuthToken</a>(string $auth_token)
-                    <p>Set Twilio auth tokn</p>
+                    <a href="#method_setTransport">setTransport</a>(string $type = &#039;smtp&#039;, array $options = array())
+                    <p>Set transport</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;array
+                </td>
+                <td class="last">
+                    <a href="#method_getTransports">getTransports</a>()
+                    <p>Get a list of available transports</p>
                 </td>
                 <td></td>
             </tr>
@@ -94,12 +104,12 @@
         <h2>Details</h2>
 
                         <h3 id="method_send">
-        <div class="location">at line 73</div>
-        <code>                    <abbr title="Omnimessage\Service\GuzzleHttp\Message\Response">Response</abbr>
+        <div class="location">at line 123</div>
+        <code>                    boolean
     <strong>send</strong>(array $data)</code>
     </h3>
     <div class="details">
-        <p>Send message to Twilio web service</p>
+        <p>Send Email</p>
         <p>
 </p>
         <div class="tags">
@@ -119,7 +129,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\Service\GuzzleHttp\Message\Response">Response</abbr></td>
+            <td>boolean</td>
             <td>
 </td>
         </tr>
@@ -130,13 +140,13 @@
                     </div>
     </div>
 
-                <h3 id="method_getAccountSid">
-        <div class="location">at line 28</div>
-        <code>                    string
-    <strong>getAccountSid</strong>()</code>
+                <h3 id="method_getMessage">
+        <div class="location">at line 35</div>
+        <code>                    <abbr title="Omnimessage\Service\Swift_Message">Swift_Message</abbr>
+    <strong>getMessage</strong>()</code>
     </h3>
     <div class="details">
-        <p>Get Twilio account sid</p>
+        <p>Get message object</p>
         <p>
 </p>
         <div class="tags">
@@ -145,7 +155,7 @@
 
                     <table>
         <tr>
-            <td>string</td>
+            <td><abbr title="Omnimessage\Service\Swift_Message">Swift_Message</abbr></td>
             <td>
 </td>
         </tr>
@@ -156,13 +166,13 @@
                     </div>
     </div>
 
-                <h3 id="method_setAccountSid">
-        <div class="location">at line 39</div>
-        <code>                    <abbr title="Omnimessage\Service\Omnimessage\Service\Twilio">Twilio</abbr>
-    <strong>setAccountSid</strong>(string $account_sid)</code>
+                <h3 id="method_setMessage">
+        <div class="location">at line 46</div>
+        <code>                    <abbr title="Omnimessage\Service\Omnimessage\Service\Email">Email</abbr>
+    <strong>setMessage</strong>(<abbr title="Omnimessage\Service\Swift_Message">Swift_Message</abbr> $message)</code>
     </h3>
     <div class="details">
-        <p>Set Twilio account sid</p>
+        <p>Set message object</p>
         <p>
 </p>
         <div class="tags">
@@ -170,8 +180,8 @@
 
                     <table>
                     <tr>
-                <td>string</td>
-                <td>$account_sid</td>
+                <td><abbr title="Omnimessage\Service\Swift_Message">Swift_Message</abbr></td>
+                <td>$message</td>
                 <td>
 </td>
             </tr>
@@ -182,7 +192,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\Service\Omnimessage\Service\Twilio">Twilio</abbr></td>
+            <td><abbr title="Omnimessage\Service\Omnimessage\Service\Email">Email</abbr></td>
             <td>
 </td>
         </tr>
@@ -193,13 +203,13 @@
                     </div>
     </div>
 
-                <h3 id="method_getAuthToken">
-        <div class="location">at line 50</div>
-        <code>                    string
-    <strong>getAuthToken</strong>()</code>
+                <h3 id="method_getTransport">
+        <div class="location">at line 57</div>
+        <code>                    <abbr title="Omnimessage\Service\Swift_Transport">Swift_Transport</abbr>
+    <strong>getTransport</strong>()</code>
     </h3>
     <div class="details">
-        <p>Get Twilio auth token</p>
+        <p>Get transport object</p>
         <p>
 </p>
         <div class="tags">
@@ -208,7 +218,7 @@
 
                     <table>
         <tr>
-            <td>string</td>
+            <td><abbr title="Omnimessage\Service\Swift_Transport">Swift_Transport</abbr></td>
             <td>
 </td>
         </tr>
@@ -219,13 +229,13 @@
                     </div>
     </div>
 
-                <h3 id="method_setAuthToken">
-        <div class="location">at line 61</div>
-        <code>                    <abbr title="Omnimessage\Service\Omnimessage\MessageDispatchers\Twilio">Twilio</abbr>
-    <strong>setAuthToken</strong>(string $auth_token)</code>
+                <h3 id="method_setTransport">
+        <div class="location">at line 69</div>
+        <code>                    <abbr title="Omnimessage\Service\Omnimessage\Service\Email">Email</abbr>
+    <strong>setTransport</strong>(string $type = &#039;smtp&#039;, array $options = array())</code>
     </h3>
     <div class="details">
-        <p>Set Twilio auth tokn</p>
+        <p>Set transport</p>
         <p>
 </p>
         <div class="tags">
@@ -234,7 +244,13 @@
                     <table>
                     <tr>
                 <td>string</td>
-                <td>$auth_token</td>
+                <td>$type</td>
+                <td>
+</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$options</td>
                 <td>
 </td>
             </tr>
@@ -245,7 +261,33 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\Service\Omnimessage\MessageDispatchers\Twilio">Twilio</abbr></td>
+            <td><abbr title="Omnimessage\Service\Omnimessage\Service\Email">Email</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getTransports">
+        <div class="location">at line 134</div>
+        <code>        static            array
+    <strong>getTransports</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get a list of available transports</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
             <td>
 </td>
         </tr>
