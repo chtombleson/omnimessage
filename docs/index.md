@@ -120,5 +120,7 @@ and implement the following methods.
   * set(array $properties)
   * getBody()
   * setBody(string $body)
+  * getResponse()
   * send()
+  * isSuccessful()
 
