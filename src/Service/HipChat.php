@@ -8,7 +8,7 @@ use GuzzleHttp\Client;
  *
  * @author Christopher Tombleson <chris@cribznetwork.com>
  */
-class HipChat
+class HipChat extends AbstractService
 {
     /**
      * @var string

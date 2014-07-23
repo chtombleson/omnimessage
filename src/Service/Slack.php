@@ -8,7 +8,7 @@ use GuzzleHttp\Client;
  *
  * @author Christopher Tombleson <chris@cribznetwork.com>
  */
-class Slack
+class Slack extends AbstractService
 {
     /**
      * @var string

@@ -2,6 +2,7 @@
 namespace Omnimessage\MessageDispatchers;
 
 use Omnimessage\Exception;
+use Omnimessage\Service\Email as EmailService;
 
 /**
  * Email message dispatchers
@@ -16,35 +17,22 @@ class Email extends AbstractDispatcher
     private $body;
 
     /**
-     * @var Swift_Message
-     */
-    private $message;
-
-    /**
-     * @var Swift_Transport
-     */
-    private $transport;
-
-    /**
      * @var boolean
      */
     private $successful;
 
     /**
-     * @var array
+     * @var Omnimessage\Service\Email
      */
-    private $available_transports = array(
-        'smtp'      => 'Swift_SmtpTransport',
-        'send_mail' => 'Swift_SendmailTransport',
-        'mail'      => 'Swift_MailTransport',
-    );
+    private $email_service;
 
     /**
      * Create a new Email dispatcher
      */
     public function __construct()
     {
-        $this->message = \Swift_Message::newInstance();
+        $this->email_service = new EmailService();
+        $this->email_service->setMessage(\Swift_Message::newInstance());
     }
 
     /**
@@ -120,7 +108,7 @@ class Email extends AbstractDispatcher
      */
     public function getMessage()
     {
-        return $this->message;
+        return $this->email_service->getMessage();
     }
 
     /**
@@ -131,7 +119,7 @@ class Email extends AbstractDispatcher
      */
     public function setMessage(\Swift_Message $message)
     {
-        $this->message = $message;
+        $this->email_service->setMessage($message);
         return $this;
     }
 
@@ -142,7 +130,7 @@ class Email extends AbstractDispatcher
      */
     public function getTransport()
     {
-        return $this->transport;
+        return $this->email_service->getTransport();
     }
 
     /**
@@ -154,46 +142,7 @@ class Email extends AbstractDispatcher
      */
     public function setTransport($type='smtp', $options=array())
     {
-        if (!in_array($type, array_keys($this->available_transports))) {
-            throw new Exception('Email Transport: ' . $type . ' is not available');
-        }
-
-        switch ($type) {
-            case 'smtp':
-                $class = '\\'. $this->available_transports['smtp'];
-
-                if (!isset($options['host']) && !isset($options['port'])) {
-                    throw new Exception('Email Transport smtp requires host & port options');
-                }
-
-                $this->transport = $class::newInstance($options['host'], $options['port']);
-
-                if (isset($options['username']) && isset($options['password'])) {
-                    $this->transport->setUsername($options['username'])
-                        ->setPassword($options['password']);
-                }
-                break;
-
-            case 'send_mail':
-                $class = '\\' . $this->available_transports['send_mail'];
-                $cmd = '/usr/sbin/sendmail -bs';
-
-                if (!empty($options['cmd'])) {
-                    $cmd = $options['cmd'];
-                }
-
-                $this->transport = $class::newInstance($cmd);
-                break;
-
-            case 'mail':
-                $class = '\\' . $this->available_transports['mail'];
-                $this->transport = $class::newInstance();
-                break;
-
-            default:
-                throw new Exception('Email transport: ' . $type . ' is not supported');
-        }
-
+        $this->email_service->setTransport($type, $options);
         return $this;
     }
 
@@ -204,7 +153,7 @@ class Email extends AbstractDispatcher
      */
     public function getSubject()
     {
-        return $this->message->getSubject();
+        return $this->getMessage()->getSubject();
     }
 
     /**
@@ -215,7 +164,7 @@ class Email extends AbstractDispatcher
      */
     public function setSubject($subject)
     {
-        $this->message->setSubject($subject);
+        $this->getMessage()->setSubject($subject);
         return $this;
     }
 
@@ -226,7 +175,7 @@ class Email extends AbstractDispatcher
      */
     public function getFrom()
     {
-        return $this->message->getFrom();
+        return $this->getMessage()->getFrom();
     }
 
     /**
@@ -237,7 +186,7 @@ class Email extends AbstractDispatcher
      */
     public function setFrom($from)
     {
-        $this->message->setFrom($from);
+        $this->getMessage()->setFrom($from);
         return $this;
     }
 
@@ -248,7 +197,7 @@ class Email extends AbstractDispatcher
      */
     public function getTo()
     {
-        return $this->message->getTo();
+        return $this->getMessage()->getTo();
     }
 
     /**
@@ -259,7 +208,7 @@ class Email extends AbstractDispatcher
      */
     public function setTo($to)
     {
-        $this->message->setTo($to);
+        $this->getMessage()->setTo($to);
         return $this;
     }
 
@@ -270,7 +219,7 @@ class Email extends AbstractDispatcher
      */
     public function getReplyTo()
     {
-        return $this->message->getReplyTo();
+        return $this->getMessage()->getReplyTo();
     }
 
     /**
@@ -281,7 +230,7 @@ class Email extends AbstractDispatcher
      */
     public function setReplyTo($reply_to)
     {
-        $this->message->setReplyTo($reply_to);
+        $this->getMessage()->setReplyTo($reply_to);
         return $this;
     }
 
@@ -292,7 +241,7 @@ class Email extends AbstractDispatcher
      */
     public function getContentType()
     {
-        return $this->message->getContentType();
+        return $this->getMessage()->getContentType();
     }
 
     /**
@@ -303,7 +252,7 @@ class Email extends AbstractDispatcher
      */
     public function setContentType($content_type)
     {
-        $this->message->setContentType($content_type);
+        $this->getMessage()->setContentType($content_type);
         return $this;
     }
 
@@ -312,7 +261,7 @@ class Email extends AbstractDispatcher
      */
     public function getBody()
     {
-        return $this->message->getBody();
+        return $this->getMessage()->getBody();
     }
 
     /**
@@ -320,7 +269,7 @@ class Email extends AbstractDispatcher
      */
     public function setBody($body)
     {
-        $this->message->setBody($body);
+        $this->getMessage()->setBody($body);
         return $this;
     }
 
@@ -337,8 +286,7 @@ class Email extends AbstractDispatcher
      */
     public function send()
     {
-        $mailer = \Swift_Mailer::newInstance($this->transport);
-        $this->successful = $mailer->send($this->message);
+        $this->successful = $this->email_service->send(null);
         return $this;
     }
 

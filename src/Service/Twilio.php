@@ -8,7 +8,7 @@ use GuzzleHttp\Client;
  *
  * @author Christopher Tombleson <chris@cribznetwork.com>
  */
-class Twilio
+class Twilio extends AbstractService
 {
     /**
      * @var string

@@ -8,7 +8,7 @@ use GuzzleHttp\Client;
  *
  * @author Christopher Tombleson <chris@cribznetwork.com>
  */
-class Web
+class Web extends AbstractService
 {
     /**
      * @var string
