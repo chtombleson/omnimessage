@@ -70,7 +70,15 @@ Parameter: string body, email body
 
 Return: Omnimessage\MessageDispatchers\Slack
 
+### getResponse()
+
+Return: mixed, response from disptacher
+
 ### send()
 
-Return: array, Slack response
+Return: Omnimessage\MessageDispatchers\Slack
+
+### isSuccessful()
+
+Return: boolean true if message was sent or false otherwise
 

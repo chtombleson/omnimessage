@@ -40,7 +40,15 @@ Parameter: array body, JSON payload
 
 Return: Omnimessage\MessageDispatchers\Web
 
+### getResponse()
+
+Return: mixed, response from disptacher
+
 ### send()
 
-Return: boolean, true on sent or false otherwise
+Return: Omnimessage\MessageDispatchers\Web
+
+### isSuccessful()
+
+Return: boolean true if message was sent or false otherwise
 

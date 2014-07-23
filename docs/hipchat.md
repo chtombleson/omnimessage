@@ -78,7 +78,15 @@ Parameter: string body, email body
 
 Return: Omnimessage\MessageDispatchers\HipChat
 
+### getResponse()
+
+Return: mixed, response from disptacher
+
 ### send()
 
-Return: boolean, HipChat response
+Return: Omnimessage\MessageDispatchers\HipChat
+
+### isSuccessful()
+
+Return: boolean true if message was sent or false otherwise
 

@@ -103,7 +103,16 @@ Parameter: string body, email body
 
 Return: Omnimessage\MessageDispatchers\Email
 
+### getResponse()
+
+Return: mixed, response from disptacher
+
 ### send()
 
-Return: boolean, true on sent or false otherwise
+Return: Omnimessage\MessageDispatchers\Email
+
+### isSuccessful()
+
+Return: boolean true if message was sent or false otherwise
+
 

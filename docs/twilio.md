@@ -70,7 +70,15 @@ Parameter: string body, email body
 
 Return: Omnimessage\MessageDispatchers\Twilio
 
+### getResponse()
+
+Return: mixed, response from disptacher
+
 ### send()
 
-Return: array, Twilio response
+Return: Omnimessage\MessageDispatchers\Twilio
+
+### isSuccessful()
+
+Return: boolean true if message was sent or false otherwise
 
