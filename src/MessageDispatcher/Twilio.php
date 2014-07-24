@@ -1,5 +1,5 @@
 <?php
-namespace Omnimessage\MessageDispatchers;
+namespace Omnimessage\MessageDispatcher;
 
 use Omnimessage\Exception;
 use Omnimessage\Service\Twilio as TwilioService;
@@ -100,7 +100,7 @@ class Twilio extends AbstractDispatcher
      * Set Twilio account sid
      *
      * @param string $account_sid
-     * @return Omnimessage\MessageDispatchers\Twilio
+     * @return Omnimessage\MessageDispatcher\Twilio
      */
     public function setAccountSid($account_sid)
     {
@@ -122,7 +122,7 @@ class Twilio extends AbstractDispatcher
      * Set Twilio auth tokn
      *
      * @param string $auth_token
-     * @return Omnimessage\MessageDispatchers\Twilio
+     * @return Omnimessage\MessageDispatcher\Twilio
      */
     public function setAuthToken($auth_token)
     {
@@ -144,7 +144,7 @@ class Twilio extends AbstractDispatcher
      * Set from
      *
      * @param string $from
-     * @return Omnimessage\MessageDispatchers\Twilio
+     * @return Omnimessage\MessageDispatcher\Twilio
      */
     public function setFrom($from)
     {
@@ -166,7 +166,7 @@ class Twilio extends AbstractDispatcher
      * Set to
      *
      * @param string $to
-     * @return Omnimessage\MessageDispatchers\Twilio
+     * @return Omnimessage\MessageDispatcher\Twilio
      */
     public function setTo($to)
     {

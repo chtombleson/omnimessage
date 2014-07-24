@@ -1,5 +1,5 @@
 <?php
-namespace Omnimessage\MessageDispatchers;
+namespace Omnimessage\MessageDispatcher;
 
 /**
  * Base class for all message dispatchers
@@ -19,7 +19,7 @@ abstract class AbstractDispatcher
      * Set dispatchers properties
      *
      * @param array $properties
-     * @return Omnimessage\MessageDispatchers\AbstractDispatcher
+     * @return Omnimessage\MessageDispatcher\AbstractDispatcher
      */
     abstract public function set($properties);
 
@@ -34,7 +34,7 @@ abstract class AbstractDispatcher
      * Set message body
      *
      * @param mixed $body
-     * @return Omnimessage\MessageDispatchers\AbstractDispatcher
+     * @return Omnimessage\MessageDispatcher\AbstractDispatcher
      */
     abstract public function setBody($body);
 
@@ -48,7 +48,7 @@ abstract class AbstractDispatcher
     /**
      * Send the message
      *
-     * @return Omnimessage\MessageDispatchers\AbstractDispatcher
+     * @return Omnimessage\MessageDispatcher\AbstractDispatcher
      */
     abstract public function send();
 

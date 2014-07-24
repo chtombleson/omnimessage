@@ -4,7 +4,7 @@ Send a json payload to a url.
 
 ## Email Dispatcher API
 
-Namespace: Omnimessage\MessageDispatchers\Web
+Namespace: Omnimessage\MessageDispatcher\Web
 
 ### get()
 
@@ -18,7 +18,7 @@ Set the properties of the dispatcher.
 
 Parameter: array properties, array of properties to set on the dispatcher
 
-Return: Omnimessage\MessageDispatchers\Web
+Return: Omnimessage\MessageDispatcher\Web
 
 ### getUrl()
 
@@ -28,7 +28,7 @@ Return: string, Url to POST to
 
 Parameter: string url, Url to POST to
 
-Return: Omnimessage\MessageDispatchers\Web
+Return: Omnimessage\MessageDispatcher\Web
 
 ### getBody()
 
@@ -38,7 +38,7 @@ Return: array, JSON payload
 
 Parameter: array body, JSON payload
 
-Return: Omnimessage\MessageDispatchers\Web
+Return: Omnimessage\MessageDispatcher\Web
 
 ### getResponse()
 
@@ -46,7 +46,7 @@ Return: mixed, response from disptacher
 
 ### send()
 
-Return: Omnimessage\MessageDispatchers\Web
+Return: Omnimessage\MessageDispatcher\Web
 
 ### isSuccessful()
 

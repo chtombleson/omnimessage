@@ -1,5 +1,5 @@
 <?php
-namespace Omnimessage\MessageDispatchers;
+namespace Omnimessage\MessageDispatcher;
 
 use Omnimessage\Service\Web as WebService;
 
@@ -74,7 +74,7 @@ class Web extends AbstractDispatcher
      * Set url
      *
      * @param string $url
-     * @return Omnimessage\MessageDispatchers\Web
+     * @return Omnimessage\MessageDispatcher\Web
      */
     public function setUrl($url)
     {

@@ -11,7 +11,7 @@ class OmnimessageTest extends \PHPUnit_Framework_TestCase
         $dispatchers = $this->getMessageDispatchers();
 
         foreach ($dispatchers as $dispatcher) {
-            $class = 'Omnimessage\\MessageDispatchers\\' . $dispatcher;
+            $class = 'Omnimessage\\MessageDispatcher\\' . $dispatcher;
             $omni = Omnimessage::create($dispatcher);
             $this->assertInstanceOf($class, $omni);
         }
@@ -51,7 +51,7 @@ class OmnimessageTest extends \PHPUnit_Framework_TestCase
     {
         $finder = new Finder();
         $dispatchers = $finder->files()->name('*.php')
-            ->in(dirname(__DIR__) . '/src/MessageDispatchers');
+            ->in(dirname(__DIR__) . '/src/MessageDispatcher');
 
         $available_dispatchers = array();
 

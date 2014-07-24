@@ -1,5 +1,5 @@
 <?php
-namespace Omnimessage\MessageDispatchers;
+namespace Omnimessage\MessageDispatcher;
 
 use Omnimessage\Exception;
 use Omnimessage\Service\Slack as SlackService;
@@ -105,7 +105,7 @@ class Slack extends AbstractDispatcher
      * Set Slack auth token
      *
      * @param string $token
-     * @return Omnimessage\MessageDispatchers\Slack
+     * @return Omnimessage\MessageDispatcher\Slack
      */
     public function setToken($token)
     {
@@ -144,7 +144,7 @@ class Slack extends AbstractDispatcher
      * Set Slack username
      *
      * @param string $username
-     * @return Omnimessage\MessageDispatchers\Slack
+     * @return Omnimessage\MessageDispatcher\Slack
      */
     public function setUsername($username)
     {
@@ -166,7 +166,7 @@ class Slack extends AbstractDispatcher
      * Set Slack channel
      *
      * @param string $channel
-     * @return Omnimessage\MessageDispatchers\Slack
+     * @return Omnimessage\MessageDispatcher\Slack
      */
     public function setChannel($channel)
     {
@@ -188,7 +188,7 @@ class Slack extends AbstractDispatcher
      * Set Slack team
      *
      * @param string $team
-     * @return Omnimessage\MessageDispatchers\Slack
+     * @return Omnimessage\MessageDispatcher\Slack
      */
     public function setTeam($team)
     {

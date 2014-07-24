@@ -1,5 +1,5 @@
 <?php
-namespace Omnimessage\MessageDispatchers;
+namespace Omnimessage\MessageDispatcher;
 
 use Omnimessage\Exception;
 use Omnimessage\Service\HipChat as HipChatService;
@@ -110,7 +110,7 @@ class HipChat extends AbstractDispatcher
      * Set HipChat auth token
      *
      * @param string $token
-     * @return Omnimessage\MessageDispatchers\HipChat
+     * @return Omnimessage\MessageDispatcher\HipChat
      */
     public function setToken($token)
     {
@@ -132,7 +132,7 @@ class HipChat extends AbstractDispatcher
      * Set HipChat room
      *
      * @param string $room
-     * @return Omnimessage\MessageDispatchers\HipChat
+     * @return Omnimessage\MessageDispatcher\HipChat
      */
     public function setRoom($room)
     {
@@ -154,7 +154,7 @@ class HipChat extends AbstractDispatcher
      * Set HipChat message format
      *
      * @param string $format
-     * @return Omnimessage\MessageDispatchers\HipChat
+     * @return Omnimessage\MessageDispatcher\HipChat
      */
     public function setFormat($format)
     {
@@ -176,7 +176,7 @@ class HipChat extends AbstractDispatcher
      * Set HipChat message color
      *
      * @param string $color
-     * @return Omnimessage\MessageDispatchers\HipChat
+     * @return Omnimessage\MessageDispatcher\HipChat
      */
     public function setColor($color)
     {
@@ -206,7 +206,7 @@ class HipChat extends AbstractDispatcher
      * Set HipChat notify flag
      *
      * @param boolean $notify
-     * @return Omnimessage\MessageDispatchers\HipChat
+     * @return Omnimessage\MessageDispatcher\HipChat
      */
     public function setNotify($notify)
     {

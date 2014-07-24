@@ -1,7 +1,7 @@
 <?php
-namespace Omnimessage\Tests\MessageDispatchers;
+namespace Omnimessage\Tests\MessageDispatcher;
 
-use Omnimessage\MessageDispatchers\HipChat;
+use Omnimessage\MessageDispatcher\HipChat;
 
 class HipChatTest extends \PHPUnit_Framework_TestCase
 {
@@ -14,7 +14,7 @@ class HipChatTest extends \PHPUnit_Framework_TestCase
 
     public function testInstanceOf()
     {
-        $this->assertInstanceOf('Omnimessage\\MessageDispatchers\\HipChat', $this->hipchat);
+        $this->assertInstanceOf('Omnimessage\\MessageDispatcher\\HipChat', $this->hipchat);
     }
 
     public function testSetGet()

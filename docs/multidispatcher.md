@@ -22,7 +22,7 @@ Get the dispatcher object.
 
 Parameter: string dispatcher, Name of dispatcher to get
 
-Return: Omnimessage\MessageDispatchers object
+Return: Omnimessage\MessageDispatcher object
 
 ### setDispatcher(string $dispatcher, array $options)
 

@@ -24,7 +24,7 @@ class Omnimessage
             );
         }
 
-        $class = 'Omnimessage\\MessageDispatchers\\' . $message_dispatcher;
+        $class = 'Omnimessage\\MessageDispatcher\\' . $message_dispatcher;
 
         if (class_exists($class)) {
             return new $class();
@@ -56,7 +56,7 @@ class Omnimessage
     {
         $finder = new Finder();
         $dispatchers = $finder->files()->name('*.php')
-            ->in(__DIR__ . '/MessageDispatchers');
+            ->in(__DIR__ . '/MessageDispatcher');
 
         $available_dispatchers = array();
 

@@ -1,7 +1,7 @@
 <?php
-namespace Omnimessage\Tests\MessageDispatchers;
+namespace Omnimessage\Tests\MessageDispatcher;
 
-use Omnimessage\MessageDispatchers\Twilio;
+use Omnimessage\MessageDispatcher\Twilio;
 
 class TwilioTest extends \PHPUnit_Framework_TestCase
 {
@@ -14,7 +14,7 @@ class TwilioTest extends \PHPUnit_Framework_TestCase
 
     public function testInstanceOf()
     {
-        $this->assertInstanceOf('Omnimessage\\MessageDispatchers\\Twilio', $this->twilio);
+        $this->assertInstanceOf('Omnimessage\\MessageDispatcher\\Twilio', $this->twilio);
     }
 
     public function testSetGet()

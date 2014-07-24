@@ -33,7 +33,7 @@ class MultiDispatcherTest extends \PHPUnit_Framework_TestCase
     public function testGetSet()
     {
         $email = $this->multi->getDispatcher('Email');
-        $this->assertInstanceOf('Omnimessage\\MessageDispatchers\\Email', $email);
+        $this->assertInstanceOf('Omnimessage\\MessageDispatcher\\Email', $email);
 
         $options = $email->get();
         foreach ($options as $idx => $val) {

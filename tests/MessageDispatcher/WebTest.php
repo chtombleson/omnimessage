@@ -1,7 +1,7 @@
 <?php
-namespace Omnimessage\Tests\MessageDispatchers;
+namespace Omnimessage\Tests\MessageDispatcher;
 
-use Omnimessage\MessageDispatchers\Web;
+use Omnimessage\MessageDispatcher\Web;
 
 class WebTest extends \PHPUnit_Framework_TestCase
 {
@@ -14,7 +14,7 @@ class WebTest extends \PHPUnit_Framework_TestCase
 
     public function testInstanceOf()
     {
-        $this->assertInstanceOf('Omnimessage\\MessageDispatchers\\Web', $this->web);
+        $this->assertInstanceOf('Omnimessage\\MessageDispatcher\\Web', $this->web);
     }
 
     public function testSetGet()

@@ -35,7 +35,7 @@ Create a new instance of a dispatcher.
 
 Parameter: string message_dispatcher, type of message dispatcher you want (Email etc)
 
-Return: Omnimessage\MessageDispatchers, message dispacther object
+Return: Omnimessage\MessageDispatcher\AbstractDispatcher, message dispacther object
 
 ### Omnimessage::createMulti(array $dispatchers, array $options)
 
@@ -113,7 +113,7 @@ different message dispatchers easily.
 
 ## Creating a message dispatcher
 
-All message dispatchers must extend Omnimessage\MessageDispatchers\AbstractDispatcher
+All message dispatchers must extend Omnimessage\MessageDispatcher\AbstractDispatcher
 and implement the following methods.
 
   * get()

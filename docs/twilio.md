@@ -4,7 +4,7 @@ Send a message as sms via Twilio.
 
 ## Twilio Dispatcher API
 
-Namespace: Omnimessage\MessageDispatchers\Twilio
+Namespace: Omnimessage\MessageDispatcher\Twilio
 
 ### get()
 
@@ -18,7 +18,7 @@ Set the properties of the dispatcher.
 
 Parameter: array properties, array of properties to set on the dispatcher
 
-Return: Omnimessage\MessageDispatchers\Twilio
+Return: Omnimessage\MessageDispatcher\Twilio
 
 ### getAccountSid()
 
@@ -28,7 +28,7 @@ Return: string, Twilio account sid
 
 Parameter: string account_sid, Twilio account sid
 
-Returns: Omnimessage\MessageDispatchers\Twilio
+Returns: Omnimessage\MessageDispatcher\Twilio
 
 ### getAuthToken()
 
@@ -38,7 +38,7 @@ Return: string, Twilio auth token
 
 Parameter: string auth_token, Twilio auth token
 
-Return: Omnimessage\MessageDispatchers\Twilio
+Return: Omnimessage\MessageDispatcher\Twilio
 
 ### getFrom()
 
@@ -48,7 +48,7 @@ Return: string, Twilio phone number
 
 Parameter: string from, Twilio phone number
 
-Return: Omnimessage\MessageDispatchers\Twilio
+Return: Omnimessage\MessageDispatcher\Twilio
 
 ### getTo()
 
@@ -58,7 +58,7 @@ Return: string, Cellphone number to send to
 
 Parameter: string to, Cellphone number to send to
 
-Return: Omnimessage\MessageDispatchers\Twilio
+Return: Omnimessage\MessageDispatcher\Twilio
 
 ### getBody()
 
@@ -68,7 +68,7 @@ Return: string, Message body
 
 Parameter: string body, email body
 
-Return: Omnimessage\MessageDispatchers\Twilio
+Return: Omnimessage\MessageDispatcher\Twilio
 
 ### getResponse()
 
@@ -76,7 +76,7 @@ Return: mixed, response from disptacher
 
 ### send()
 
-Return: Omnimessage\MessageDispatchers\Twilio
+Return: Omnimessage\MessageDispatcher\Twilio
 
 ### isSuccessful()
 

@@ -4,7 +4,7 @@ Send a message via Slack.
 
 ## Slack Dispatcher API
 
-Namespace: Omnimessage\MessageDispatchers\Slack
+Namespace: Omnimessage\MessageDispatcher\Slack
 
 ### get()
 
@@ -18,7 +18,7 @@ Set the properties of the dispatcher.
 
 Parameter: array properties, array of properties to set on the dispatcher
 
-Return: Omnimessage\MessageDispatchers\Slack
+Return: Omnimessage\MessageDispatcher\Slack
 
 ### getToken()
 
@@ -28,7 +28,7 @@ Return: string, Slack API token
 
 Parameter: string token, Slack API token
 
-Returns: Omnimessage\MessageDispatchers\Slack
+Returns: Omnimessage\MessageDispatcher\Slack
 
 ### getUsername()
 
@@ -38,7 +38,7 @@ Return: string, Username to use when posting to slack
 
 Parameter: string username, Username to use when posting to slack
 
-Return: Omnimessage\MessageDispatchers\Slack
+Return: Omnimessage\MessageDispatcher\Slack
 
 ### getChannel()
 
@@ -48,7 +48,7 @@ Return: string, Slack channel to post to
 
 Parameter: string channel, Slack channel to post to
 
-Return: Omnimessage\MessageDispatchers\Slack
+Return: Omnimessage\MessageDispatcher\Slack
 
 ### getTeam()
 
@@ -58,7 +58,7 @@ Return: string, Slack url eg. [team].slack.com
 
 Parameter: string team, Slack url eg. [team].slack.com
 
-Return: Omnimessage\MessageDispatchers\Slack
+Return: Omnimessage\MessageDispatcher\Slack
 
 ### getBody()
 
@@ -68,7 +68,7 @@ Return: string, Message body
 
 Parameter: string body, email body
 
-Return: Omnimessage\MessageDispatchers\Slack
+Return: Omnimessage\MessageDispatcher\Slack
 
 ### getResponse()
 
@@ -76,7 +76,7 @@ Return: mixed, response from disptacher
 
 ### send()
 
-Return: Omnimessage\MessageDispatchers\Slack
+Return: Omnimessage\MessageDispatcher\Slack
 
 ### isSuccessful()
 

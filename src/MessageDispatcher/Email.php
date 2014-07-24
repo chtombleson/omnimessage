@@ -1,5 +1,5 @@
 <?php
-namespace Omnimessage\MessageDispatchers;
+namespace Omnimessage\MessageDispatcher;
 
 use Omnimessage\Exception;
 use Omnimessage\Service\Email as EmailService;
@@ -115,7 +115,7 @@ class Email extends AbstractDispatcher
      * Set message object
      *
      * @param Swift_Message $message
-     * @return Omnimessage\MessageDispatchers\Email
+     * @return Omnimessage\MessageDispatcher\Email
      */
     public function setMessage(\Swift_Message $message)
     {
@@ -138,7 +138,7 @@ class Email extends AbstractDispatcher
      *
      * @param string $type
      * @param array $options
-     * @return Omnimessage\MessageDispatchers\Email
+     * @return Omnimessage\MessageDispatcher\Email
      */
     public function setTransport($type='smtp', $options=array())
     {
@@ -160,7 +160,7 @@ class Email extends AbstractDispatcher
      * Set subject
      *
      * @param string $subject
-     * @return Omnimessage\MessageDispatchers\Email
+     * @return Omnimessage\MessageDispatcher\Email
      */
     public function setSubject($subject)
     {
@@ -182,7 +182,7 @@ class Email extends AbstractDispatcher
      * Set from
      *
      * @param mixed $from
-     * @return Omnimessage\MessageDispatchers\Email
+     * @return Omnimessage\MessageDispatcher\Email
      */
     public function setFrom($from)
     {
@@ -204,7 +204,7 @@ class Email extends AbstractDispatcher
      * Set to
      *
      * @param mixed $to
-     * @return Omnimessage\MessageDispatchers\Email
+     * @return Omnimessage\MessageDispatcher\Email
      */
     public function setTo($to)
     {
@@ -226,7 +226,7 @@ class Email extends AbstractDispatcher
      * Set reply to
      *
      * @param mixed $reply_to
-     * @return Omnimessage\MessageDispatchers\Email
+     * @return Omnimessage\MessageDispatcher\Email
      */
     public function setReplyTo($reply_to)
     {
@@ -248,7 +248,7 @@ class Email extends AbstractDispatcher
      * Set content type
      *
      * @param string $content_type
-     * @return Omnimessage\MessageDispatchers\Email
+     * @return Omnimessage\MessageDispatcher\Email
      */
     public function setContentType($content_type)
     {

@@ -4,7 +4,7 @@ Send a message via HipChat.
 
 ## HipChat Dispatcher API
 
-Namespace: Omnimessage\MessageDispatchers\HipChat
+Namespace: Omnimessage\MessageDispatcher\HipChat
 
 ### get()
 
@@ -18,7 +18,7 @@ Set the properties of the dispatcher.
 
 Parameter: array properties, array of properties to set on the dispatcher
 
-Return: Omnimessage\MessageDispatchers\HipChat
+Return: Omnimessage\MessageDispatcher\HipChat
 
 ### getToken()
 
@@ -28,7 +28,7 @@ Return: string, HipChat API token
 
 Parameter: string token, HipChat API token
 
-Returns: Omnimessage\MessageDispatchers\HipChat
+Returns: Omnimessage\MessageDispatcher\HipChat
 
 ### getRoom()
 
@@ -38,7 +38,7 @@ Return: string, Room to post to
 
 Parameter: string username, Room to post to
 
-Return: Omnimessage\MessageDispatchers\HipChat
+Return: Omnimessage\MessageDispatcher\HipChat
 
 ### getFormat()
 
@@ -48,7 +48,7 @@ Return: string, Format of message (default: html)
 
 Parameter: string channel, Format of message (default: html)
 
-Return: Omnimessage\MessageDispatchers\HipChat
+Return: Omnimessage\MessageDispatcher\HipChat
 
 ### getColor()
 
@@ -58,7 +58,7 @@ Return: string, Color for message
 
 Parameter: string color, Color of message
 
-Return: Omnimessage\MessageDispatchers\HipChat
+Return: Omnimessage\MessageDispatcher\HipChat
 
 ### getNotify()
 
@@ -76,7 +76,7 @@ Return: string, Message body
 
 Parameter: string body, email body
 
-Return: Omnimessage\MessageDispatchers\HipChat
+Return: Omnimessage\MessageDispatcher\HipChat
 
 ### getResponse()
 
@@ -84,7 +84,7 @@ Return: mixed, response from disptacher
 
 ### send()
 
-Return: Omnimessage\MessageDispatchers\HipChat
+Return: Omnimessage\MessageDispatcher\HipChat
 
 ### isSuccessful()
 

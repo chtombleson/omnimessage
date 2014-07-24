@@ -1,7 +1,7 @@
 <?php
-namespace Omnimessage\Tests\MessageDispatchers;
+namespace Omnimessage\Tests\MessageDispatcher;
 
-use Omnimessage\MessageDispatchers\Email;
+use Omnimessage\MessageDispatcher\Email;
 
 class EmailTest extends \PHPUnit_Framework_TestCase
 {
@@ -14,7 +14,7 @@ class EmailTest extends \PHPUnit_Framework_TestCase
 
     public function testInstanceOf()
     {
-        $this->assertInstanceOf('Omnimessage\\MessageDispatchers\\Email', $this->email);
+        $this->assertInstanceOf('Omnimessage\\MessageDispatcher\\Email', $this->email);
     }
 
     public function testSetGet()
