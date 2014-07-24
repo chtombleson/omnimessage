@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="robots" content="index, follow, all" />
-        <title>Omnimessage\MessageDispatchers\AbstractDispatcher | Omnimessage API</title>
+        <title>Omnimessage\MessageDispatcher\Web | Omnimessage API</title>
                     <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
                             </head>
         <body id="class">
@@ -20,14 +20,14 @@
         <div id="title">Omnimessage API</div>
 
             <div class="type">Class</div>
-    <h1><a href="../../Omnimessage/MessageDispatchers.html">Omnimessage\MessageDispatchers</a>\AbstractDispatcher</h1>
+    <h1><a href="../../Omnimessage/MessageDispatcher.html">Omnimessage\MessageDispatcher</a>\Web</h1>
     </div>
         <div class="content">
-                <p>abstract     class
-    <strong>AbstractDispatcher</strong></p>
+                <p>    class
+    <strong>Web</strong>        extends <a href="../../Omnimessage/MessageDispatcher/AbstractDispatcher.html"><abbr title="Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></a></p>
 
             <div class="description">
-            <p>Base class for all message dispatchers</p>
+            <p>Web message dispatchers</p>
             <p>
 </p>
         </div>
@@ -50,7 +50,7 @@
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_set">set</a>(array $properties)
@@ -70,7 +70,7 @@
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_setBody">setBody</a>(mixed $body)
@@ -90,7 +90,7 @@
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_send">send</a>()
@@ -116,6 +116,36 @@
                     <a href="#method_getName">getName</a>()
                     <p>Get the dispatcher name</p>
                 </td>
+                <td><small>from&nbsp;<a href="../../Omnimessage/MessageDispatcher/AbstractDispatcher.html#method_getName"><abbr title="Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>()
+                    <p>Create a new Web message dispatcher</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_getUrl">getUrl</a>()
+                    <p>Get url</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Web">Web</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_setUrl">setUrl</a>(string $url)
+                    <p>Set url</p>
+                </td>
                 <td></td>
             </tr>
             </table>
@@ -124,8 +154,8 @@
         <h2>Details</h2>
 
                         <h3 id="method_get">
-        <div class="location">at line 16</div>
-        <code>    abstract                array
+        <div class="location">at line 39</div>
+        <code>                    array
     <strong>get</strong>()</code>
     </h3>
     <div class="details">
@@ -150,8 +180,8 @@
     </div>
 
                 <h3 id="method_set">
-        <div class="location">at line 24</div>
-        <code>    abstract                <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+        <div class="location">at line 50</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
     <strong>set</strong>(array $properties)</code>
     </h3>
     <div class="details">
@@ -175,7 +205,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></td>
             <td>
 </td>
         </tr>
@@ -187,8 +217,8 @@
     </div>
 
                 <h3 id="method_getBody">
-        <div class="location">at line 31</div>
-        <code>    abstract                mixed
+        <div class="location">at line 88</div>
+        <code>                    mixed
     <strong>getBody</strong>()</code>
     </h3>
     <div class="details">
@@ -213,8 +243,8 @@
     </div>
 
                 <h3 id="method_setBody">
-        <div class="location">at line 39</div>
-        <code>    abstract                <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+        <div class="location">at line 96</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
     <strong>setBody</strong>(mixed $body)</code>
     </h3>
     <div class="details">
@@ -238,7 +268,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></td>
             <td>
 </td>
         </tr>
@@ -250,8 +280,8 @@
     </div>
 
                 <h3 id="method_getResponse">
-        <div class="location">at line 46</div>
-        <code>    abstract                mixed
+        <div class="location">at line 105</div>
+        <code>                    mixed
     <strong>getResponse</strong>()</code>
     </h3>
     <div class="details">
@@ -276,8 +306,8 @@
     </div>
 
                 <h3 id="method_send">
-        <div class="location">at line 53</div>
-        <code>    abstract                <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+        <div class="location">at line 113</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
     <strong>send</strong>()</code>
     </h3>
     <div class="details">
@@ -290,7 +320,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></td>
             <td>
 </td>
         </tr>
@@ -302,8 +332,8 @@
     </div>
 
                 <h3 id="method_isSuccessful">
-        <div class="location">at line 60</div>
-        <code>    abstract                boolean
+        <div class="location">at line 126</div>
+        <code>                    boolean
     <strong>isSuccessful</strong>()</code>
     </h3>
     <div class="details">
@@ -328,7 +358,7 @@
     </div>
 
                 <h3 id="method_getName">
-        <div class="location">at line 67</div>
+        <div class="location">in <a href="../../Omnimessage/MessageDispatcher/AbstractDispatcher.html#method_getName"><abbr title="Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></a> at line 67</div>
         <code>                    string
     <strong>getName</strong>()</code>
     </h3>
@@ -343,6 +373,85 @@
                     <table>
         <tr>
             <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method___construct">
+        <div class="location">at line 31</div>
+        <code>                    
+    <strong>__construct</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Create a new Web message dispatcher</p>
+        <p>
+</p>
+        <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getUrl">
+        <div class="location">at line 68</div>
+        <code>                    string
+    <strong>getUrl</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get url</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setUrl">
+        <div class="location">at line 79</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Web">Web</abbr>
+    <strong>setUrl</strong>(string $url)</code>
+    </h3>
+    <div class="details">
+        <p>Set url</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$url</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Web">Web</abbr></td>
             <td>
 </td>
         </tr>

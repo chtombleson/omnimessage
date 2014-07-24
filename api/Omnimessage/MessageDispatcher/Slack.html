@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="robots" content="index, follow, all" />
-        <title>Omnimessage\MessageDispatchers\HipChat | Omnimessage API</title>
+        <title>Omnimessage\MessageDispatcher\Slack | Omnimessage API</title>
                     <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
                             </head>
         <body id="class">
@@ -20,14 +20,14 @@
         <div id="title">Omnimessage API</div>
 
             <div class="type">Class</div>
-    <h1><a href="../../Omnimessage/MessageDispatchers.html">Omnimessage\MessageDispatchers</a>\HipChat</h1>
+    <h1><a href="../../Omnimessage/MessageDispatcher.html">Omnimessage\MessageDispatcher</a>\Slack</h1>
     </div>
         <div class="content">
                 <p>    class
-    <strong>HipChat</strong>        extends <a href="../../Omnimessage/MessageDispatchers/AbstractDispatcher.html"><abbr title="Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></a></p>
+    <strong>Slack</strong>        extends <a href="../../Omnimessage/MessageDispatcher/AbstractDispatcher.html"><abbr title="Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></a></p>
 
             <div class="description">
-            <p>HipChat message dispatchers</p>
+            <p>Slack message dispatchers</p>
             <p>
 </p>
         </div>
@@ -50,7 +50,7 @@
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_set">set</a>(array $properties)
@@ -70,7 +70,7 @@
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_setBody">setBody</a>(mixed $body)
@@ -90,7 +90,7 @@
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_send">send</a>()
@@ -116,7 +116,7 @@
                     <a href="#method_getName">getName</a>()
                     <p>Get the dispatcher name</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../Omnimessage/MessageDispatchers/AbstractDispatcher.html#method_getName"><abbr title="Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></a></small></td>
+                <td><small>from&nbsp;<a href="../../Omnimessage/MessageDispatcher/AbstractDispatcher.html#method_getName"><abbr title="Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -124,7 +124,7 @@
                 </td>
                 <td class="last">
                     <a href="#method___construct">__construct</a>()
-                    <p>Create a new HipChat message dispatcher</p>
+                    <p>Create a new Slack message dispatcher</p>
                 </td>
                 <td></td>
             </tr>
@@ -134,17 +134,17 @@
                 </td>
                 <td class="last">
                     <a href="#method_getToken">getToken</a>()
-                    <p>Get HipChat auth token</p>
+                    <p>Get Slack auth token</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Slack">Slack</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_setToken">setToken</a>(string $token)
-                    <p>Set HipChat auth token</p>
+                    <p>Set Slack auth token</p>
                 </td>
                 <td></td>
             </tr>
@@ -153,38 +153,18 @@
                     string
                 </td>
                 <td class="last">
-                    <a href="#method_getRoom">getRoom</a>()
-                    <p>Get HipChat room</p>
+                    <a href="#method_getUsername">getUsername</a>()
+                    <p>Get Slack username</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Slack">Slack</abbr>
                 </td>
                 <td class="last">
-                    <a href="#method_setRoom">setRoom</a>(string $room)
-                    <p>Set HipChat room</p>
-                </td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type">
-                    string
-                </td>
-                <td class="last">
-                    <a href="#method_getFormat">getFormat</a>()
-                    <p>Get HipChat message format</p>
-                </td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr>
-                </td>
-                <td class="last">
-                    <a href="#method_setFormat">setFormat</a>(string $format)
-                    <p>Set HipChat message format</p>
+                    <a href="#method_setUsername">setUsername</a>(string $username)
+                    <p>Set Slack username</p>
                 </td>
                 <td></td>
             </tr>
@@ -193,38 +173,38 @@
                     string
                 </td>
                 <td class="last">
-                    <a href="#method_getColor">getColor</a>()
-                    <p>Get HipChat message color</p>
+                    <a href="#method_getChannel">getChannel</a>()
+                    <p>Get Slack channel</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Slack">Slack</abbr>
                 </td>
                 <td class="last">
-                    <a href="#method_setColor">setColor</a>(string $color)
-                    <p>Set HipChat message color</p>
+                    <a href="#method_setChannel">setChannel</a>(string $channel)
+                    <p>Set Slack channel</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    boolean
+                    string
                 </td>
                 <td class="last">
-                    <a href="#method_getNotify">getNotify</a>()
-                    <p>Get HipChat notify flag</p>
+                    <a href="#method_getTeam">getTeam</a>()
+                    <p>Get Slack team</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Slack">Slack</abbr>
                 </td>
                 <td class="last">
-                    <a href="#method_setNotify">setNotify</a>(boolean $notify)
-                    <p>Set HipChat notify flag</p>
+                    <a href="#method_setTeam">setTeam</a>(string $team)
+                    <p>Set Slack team</p>
                 </td>
                 <td></td>
             </tr>
@@ -260,8 +240,8 @@
     </div>
 
                 <h3 id="method_set">
-        <div class="location">at line 70</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+        <div class="location">at line 69</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
     <strong>set</strong>(array $properties)</code>
     </h3>
     <div class="details">
@@ -285,7 +265,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></td>
             <td>
 </td>
         </tr>
@@ -297,7 +277,7 @@
     </div>
 
                 <h3 id="method_getBody">
-        <div class="location">at line 220</div>
+        <div class="location">at line 119</div>
         <code>                    mixed
     <strong>getBody</strong>()</code>
     </h3>
@@ -323,8 +303,8 @@
     </div>
 
                 <h3 id="method_setBody">
-        <div class="location">at line 228</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+        <div class="location">at line 127</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
     <strong>setBody</strong>(mixed $body)</code>
     </h3>
     <div class="details">
@@ -348,7 +328,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></td>
             <td>
 </td>
         </tr>
@@ -360,7 +340,7 @@
     </div>
 
                 <h3 id="method_getResponse">
-        <div class="location">at line 237</div>
+        <div class="location">at line 202</div>
         <code>                    mixed
     <strong>getResponse</strong>()</code>
     </h3>
@@ -386,8 +366,8 @@
     </div>
 
                 <h3 id="method_send">
-        <div class="location">at line 245</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+        <div class="location">at line 210</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
     <strong>send</strong>()</code>
     </h3>
     <div class="details">
@@ -400,7 +380,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></td>
             <td>
 </td>
         </tr>
@@ -412,7 +392,7 @@
     </div>
 
                 <h3 id="method_isSuccessful">
-        <div class="location">at line 271</div>
+        <div class="location">at line 240</div>
         <code>                    boolean
     <strong>isSuccessful</strong>()</code>
     </h3>
@@ -438,7 +418,7 @@
     </div>
 
                 <h3 id="method_getName">
-        <div class="location">in <a href="../../Omnimessage/MessageDispatchers/AbstractDispatcher.html#method_getName"><abbr title="Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></a> at line 67</div>
+        <div class="location">in <a href="../../Omnimessage/MessageDispatcher/AbstractDispatcher.html#method_getName"><abbr title="Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></a> at line 67</div>
         <code>                    string
     <strong>getName</strong>()</code>
     </h3>
@@ -469,7 +449,7 @@
     <strong>__construct</strong>()</code>
     </h3>
     <div class="details">
-        <p>Create a new HipChat message dispatcher</p>
+        <p>Create a new Slack message dispatcher</p>
         <p>
 </p>
         <div class="tags">
@@ -480,12 +460,12 @@
     </div>
 
                 <h3 id="method_getToken">
-        <div class="location">at line 104</div>
+        <div class="location">at line 99</div>
         <code>                    string
     <strong>getToken</strong>()</code>
     </h3>
     <div class="details">
-        <p>Get HipChat auth token</p>
+        <p>Get Slack auth token</p>
         <p>
 </p>
         <div class="tags">
@@ -506,12 +486,12 @@
     </div>
 
                 <h3 id="method_setToken">
-        <div class="location">at line 115</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr>
+        <div class="location">at line 110</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Slack">Slack</abbr>
     <strong>setToken</strong>(string $token)</code>
     </h3>
     <div class="details">
-        <p>Set HipChat auth token</p>
+        <p>Set Slack auth token</p>
         <p>
 </p>
         <div class="tags">
@@ -531,7 +511,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Slack">Slack</abbr></td>
             <td>
 </td>
         </tr>
@@ -542,13 +522,13 @@
                     </div>
     </div>
 
-                <h3 id="method_getRoom">
-        <div class="location">at line 126</div>
+                <h3 id="method_getUsername">
+        <div class="location">at line 138</div>
         <code>                    string
-    <strong>getRoom</strong>()</code>
+    <strong>getUsername</strong>()</code>
     </h3>
     <div class="details">
-        <p>Get HipChat room</p>
+        <p>Get Slack username</p>
         <p>
 </p>
         <div class="tags">
@@ -568,13 +548,13 @@
                     </div>
     </div>
 
-                <h3 id="method_setRoom">
-        <div class="location">at line 137</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr>
-    <strong>setRoom</strong>(string $room)</code>
+                <h3 id="method_setUsername">
+        <div class="location">at line 149</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Slack">Slack</abbr>
+    <strong>setUsername</strong>(string $username)</code>
     </h3>
     <div class="details">
-        <p>Set HipChat room</p>
+        <p>Set Slack username</p>
         <p>
 </p>
         <div class="tags">
@@ -583,7 +563,7 @@
                     <table>
                     <tr>
                 <td>string</td>
-                <td>$room</td>
+                <td>$username</td>
                 <td>
 </td>
             </tr>
@@ -594,7 +574,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Slack">Slack</abbr></td>
             <td>
 </td>
         </tr>
@@ -605,13 +585,13 @@
                     </div>
     </div>
 
-                <h3 id="method_getFormat">
-        <div class="location">at line 148</div>
+                <h3 id="method_getChannel">
+        <div class="location">at line 160</div>
         <code>                    string
-    <strong>getFormat</strong>()</code>
+    <strong>getChannel</strong>()</code>
     </h3>
     <div class="details">
-        <p>Get HipChat message format</p>
+        <p>Get Slack channel</p>
         <p>
 </p>
         <div class="tags">
@@ -631,13 +611,13 @@
                     </div>
     </div>
 
-                <h3 id="method_setFormat">
-        <div class="location">at line 159</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr>
-    <strong>setFormat</strong>(string $format)</code>
+                <h3 id="method_setChannel">
+        <div class="location">at line 171</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Slack">Slack</abbr>
+    <strong>setChannel</strong>(string $channel)</code>
     </h3>
     <div class="details">
-        <p>Set HipChat message format</p>
+        <p>Set Slack channel</p>
         <p>
 </p>
         <div class="tags">
@@ -646,7 +626,7 @@
                     <table>
                     <tr>
                 <td>string</td>
-                <td>$format</td>
+                <td>$channel</td>
                 <td>
 </td>
             </tr>
@@ -657,7 +637,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Slack">Slack</abbr></td>
             <td>
 </td>
         </tr>
@@ -668,13 +648,13 @@
                     </div>
     </div>
 
-                <h3 id="method_getColor">
-        <div class="location">at line 170</div>
+                <h3 id="method_getTeam">
+        <div class="location">at line 182</div>
         <code>                    string
-    <strong>getColor</strong>()</code>
+    <strong>getTeam</strong>()</code>
     </h3>
     <div class="details">
-        <p>Get HipChat message color</p>
+        <p>Get Slack team</p>
         <p>
 </p>
         <div class="tags">
@@ -694,13 +674,13 @@
                     </div>
     </div>
 
-                <h3 id="method_setColor">
-        <div class="location">at line 181</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr>
-    <strong>setColor</strong>(string $color)</code>
+                <h3 id="method_setTeam">
+        <div class="location">at line 193</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Slack">Slack</abbr>
+    <strong>setTeam</strong>(string $team)</code>
     </h3>
     <div class="details">
-        <p>Set HipChat message color</p>
+        <p>Set Slack team</p>
         <p>
 </p>
         <div class="tags">
@@ -709,7 +689,7 @@
                     <table>
                     <tr>
                 <td>string</td>
-                <td>$color</td>
+                <td>$team</td>
                 <td>
 </td>
             </tr>
@@ -720,70 +700,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-                <h3 id="method_getNotify">
-        <div class="location">at line 200</div>
-        <code>                    boolean
-    <strong>getNotify</strong>()</code>
-    </h3>
-    <div class="details">
-        <p>Get HipChat notify flag</p>
-        <p>
-</p>
-        <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table>
-        <tr>
-            <td>boolean</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-                <h3 id="method_setNotify">
-        <div class="location">at line 211</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr>
-    <strong>setNotify</strong>(boolean $notify)</code>
-    </h3>
-    <div class="details">
-        <p>Set HipChat notify flag</p>
-        <p>
-</p>
-        <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table>
-                    <tr>
-                <td>boolean</td>
-                <td>$notify</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table>
-        <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\HipChat">HipChat</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Slack">Slack</abbr></td>
             <td>
 </td>
         </tr>

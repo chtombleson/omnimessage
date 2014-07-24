@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="robots" content="index, follow, all" />
-        <title>Omnimessage\MessageDispatchers\Email | Omnimessage API</title>
+        <title>Omnimessage\MessageDispatcher\Twilio | Omnimessage API</title>
                     <link rel="stylesheet" type="text/css" href="../../stylesheet.css">
                             </head>
         <body id="class">
@@ -20,14 +20,14 @@
         <div id="title">Omnimessage API</div>
 
             <div class="type">Class</div>
-    <h1><a href="../../Omnimessage/MessageDispatchers.html">Omnimessage\MessageDispatchers</a>\Email</h1>
+    <h1><a href="../../Omnimessage/MessageDispatcher.html">Omnimessage\MessageDispatcher</a>\Twilio</h1>
     </div>
         <div class="content">
                 <p>    class
-    <strong>Email</strong>        extends <a href="../../Omnimessage/MessageDispatchers/AbstractDispatcher.html"><abbr title="Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></a></p>
+    <strong>Twilio</strong>        extends <a href="../../Omnimessage/MessageDispatcher/AbstractDispatcher.html"><abbr title="Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></a></p>
 
             <div class="description">
-            <p>Email message dispatchers</p>
+            <p>Twilio message dispatchers</p>
             <p>
 </p>
         </div>
@@ -50,7 +50,7 @@
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_set">set</a>(array $properties)
@@ -70,7 +70,7 @@
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_setBody">setBody</a>(mixed $body)
@@ -90,7 +90,7 @@
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
                 </td>
                 <td class="last">
                     <a href="#method_send">send</a>()
@@ -116,7 +116,7 @@
                     <a href="#method_getName">getName</a>()
                     <p>Get the dispatcher name</p>
                 </td>
-                <td><small>from&nbsp;<a href="../../Omnimessage/MessageDispatchers/AbstractDispatcher.html#method_getName"><abbr title="Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></a></small></td>
+                <td><small>from&nbsp;<a href="../../Omnimessage/MessageDispatcher/AbstractDispatcher.html#method_getName"><abbr title="Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></a></small></td>
             </tr>
                     <tr>
                 <td class="type">
@@ -124,47 +124,7 @@
                 </td>
                 <td class="last">
                     <a href="#method___construct">__construct</a>()
-                    <p>Create a new Email dispatcher</p>
-                </td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Swift_Message">Swift_Message</abbr>
-                </td>
-                <td class="last">
-                    <a href="#method_getMessage">getMessage</a>()
-                    <p>Get message object</p>
-                </td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr>
-                </td>
-                <td class="last">
-                    <a href="#method_setMessage">setMessage</a>(<abbr title="Omnimessage\MessageDispatchers\Swift_Message">Swift_Message</abbr> $message)
-                    <p>Set message object</p>
-                </td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Swift_Transport">Swift_Transport</abbr>
-                </td>
-                <td class="last">
-                    <a href="#method_getTransport">getTransport</a>()
-                    <p>Get transport object</p>
-                </td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr>
-                </td>
-                <td class="last">
-                    <a href="#method_setTransport">setTransport</a>(string $type = &#039;smtp&#039;, array $options = array())
-                    <p>Set transport</p>
+                    <p>Create a new Twilio message dispatcher</p>
                 </td>
                 <td></td>
             </tr>
@@ -173,24 +133,44 @@
                     string
                 </td>
                 <td class="last">
-                    <a href="#method_getSubject">getSubject</a>()
-                    <p>Get subject</p>
+                    <a href="#method_getAccountSid">getAccountSid</a>()
+                    <p>Get Twilio account sid</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Twilio">Twilio</abbr>
                 </td>
                 <td class="last">
-                    <a href="#method_setSubject">setSubject</a>(string $subject)
-                    <p>Set subject</p>
+                    <a href="#method_setAccountSid">setAccountSid</a>(string $account_sid)
+                    <p>Set Twilio account sid</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    array
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_getAuthToken">getAuthToken</a>()
+                    <p>Get Twilio auth token</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Twilio">Twilio</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_setAuthToken">setAuthToken</a>(string $auth_token)
+                    <p>Set Twilio auth tokn</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
                 </td>
                 <td class="last">
                     <a href="#method_getFrom">getFrom</a>()
@@ -200,17 +180,17 @@
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Twilio">Twilio</abbr>
                 </td>
                 <td class="last">
-                    <a href="#method_setFrom">setFrom</a>(mixed $from)
+                    <a href="#method_setFrom">setFrom</a>(string $from)
                     <p>Set from</p>
                 </td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type">
-                    array
+                    string
                 </td>
                 <td class="last">
                     <a href="#method_getTo">getTo</a>()
@@ -220,51 +200,11 @@
             </tr>
                     <tr>
                 <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr>
+                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Twilio">Twilio</abbr>
                 </td>
                 <td class="last">
-                    <a href="#method_setTo">setTo</a>(mixed $to)
+                    <a href="#method_setTo">setTo</a>(string $to)
                     <p>Set to</p>
-                </td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type">
-                    array
-                </td>
-                <td class="last">
-                    <a href="#method_getReplyTo">getReplyTo</a>()
-                    <p>Get reply to</p>
-                </td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr>
-                </td>
-                <td class="last">
-                    <a href="#method_setReplyTo">setReplyTo</a>(mixed $reply_to)
-                    <p>Set reply to</p>
-                </td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type">
-                    string
-                </td>
-                <td class="last">
-                    <a href="#method_getContentType">getContentType</a>()
-                    <p>Get content type</p>
-                </td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type">
-                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr>
-                </td>
-                <td class="last">
-                    <a href="#method_setContentType">setContentType</a>(string $content_type)
-                    <p>Set content type</p>
                 </td>
                 <td></td>
             </tr>
@@ -274,7 +214,7 @@
         <h2>Details</h2>
 
                         <h3 id="method_get">
-        <div class="location">at line 41</div>
+        <div class="location">at line 50</div>
         <code>                    array
     <strong>get</strong>()</code>
     </h3>
@@ -300,8 +240,8 @@
     </div>
 
                 <h3 id="method_set">
-        <div class="location">at line 58</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+        <div class="location">at line 64</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
     <strong>set</strong>(array $properties)</code>
     </h3>
     <div class="details">
@@ -325,7 +265,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></td>
             <td>
 </td>
         </tr>
@@ -337,7 +277,7 @@
     </div>
 
                 <h3 id="method_getBody">
-        <div class="location">at line 262</div>
+        <div class="location">at line 180</div>
         <code>                    mixed
     <strong>getBody</strong>()</code>
     </h3>
@@ -363,8 +303,8 @@
     </div>
 
                 <h3 id="method_setBody">
-        <div class="location">at line 270</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+        <div class="location">at line 188</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
     <strong>setBody</strong>(mixed $body)</code>
     </h3>
     <div class="details">
@@ -388,7 +328,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></td>
             <td>
 </td>
         </tr>
@@ -400,7 +340,7 @@
     </div>
 
                 <h3 id="method_getResponse">
-        <div class="location">at line 279</div>
+        <div class="location">at line 197</div>
         <code>                    mixed
     <strong>getResponse</strong>()</code>
     </h3>
@@ -426,8 +366,8 @@
     </div>
 
                 <h3 id="method_send">
-        <div class="location">at line 287</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr>
+        <div class="location">at line 205</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr>
     <strong>send</strong>()</code>
     </h3>
     <div class="details">
@@ -440,7 +380,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></td>
             <td>
 </td>
         </tr>
@@ -452,7 +392,7 @@
     </div>
 
                 <h3 id="method_isSuccessful">
-        <div class="location">at line 296</div>
+        <div class="location">at line 235</div>
         <code>                    boolean
     <strong>isSuccessful</strong>()</code>
     </h3>
@@ -478,7 +418,7 @@
     </div>
 
                 <h3 id="method_getName">
-        <div class="location">in <a href="../../Omnimessage/MessageDispatchers/AbstractDispatcher.html#method_getName"><abbr title="Omnimessage\MessageDispatchers\AbstractDispatcher">AbstractDispatcher</abbr></a> at line 67</div>
+        <div class="location">in <a href="../../Omnimessage/MessageDispatcher/AbstractDispatcher.html#method_getName"><abbr title="Omnimessage\MessageDispatcher\AbstractDispatcher">AbstractDispatcher</abbr></a> at line 67</div>
         <code>                    string
     <strong>getName</strong>()</code>
     </h3>
@@ -504,12 +444,12 @@
     </div>
 
                 <h3 id="method___construct">
-        <div class="location">at line 32</div>
+        <div class="location">at line 42</div>
         <code>                    
     <strong>__construct</strong>()</code>
     </h3>
     <div class="details">
-        <p>Create a new Email dispatcher</p>
+        <p>Create a new Twilio message dispatcher</p>
         <p>
 </p>
         <div class="tags">
@@ -519,145 +459,13 @@
                     </div>
     </div>
 
-                <h3 id="method_getMessage">
-        <div class="location">at line 109</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Swift_Message">Swift_Message</abbr>
-    <strong>getMessage</strong>()</code>
-    </h3>
-    <div class="details">
-        <p>Get message object</p>
-        <p>
-</p>
-        <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table>
-        <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Swift_Message">Swift_Message</abbr></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-                <h3 id="method_setMessage">
-        <div class="location">at line 120</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr>
-    <strong>setMessage</strong>(<abbr title="Omnimessage\MessageDispatchers\Swift_Message">Swift_Message</abbr> $message)</code>
-    </h3>
-    <div class="details">
-        <p>Set message object</p>
-        <p>
-</p>
-        <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table>
-                    <tr>
-                <td><abbr title="Omnimessage\MessageDispatchers\Swift_Message">Swift_Message</abbr></td>
-                <td>$message</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table>
-        <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-                <h3 id="method_getTransport">
-        <div class="location">at line 131</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Swift_Transport">Swift_Transport</abbr>
-    <strong>getTransport</strong>()</code>
-    </h3>
-    <div class="details">
-        <p>Get transport object</p>
-        <p>
-</p>
-        <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table>
-        <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Swift_Transport">Swift_Transport</abbr></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-                <h3 id="method_setTransport">
-        <div class="location">at line 143</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr>
-    <strong>setTransport</strong>(string $type = &#039;smtp&#039;, array $options = array())</code>
-    </h3>
-    <div class="details">
-        <p>Set transport</p>
-        <p>
-</p>
-        <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table>
-                    <tr>
-                <td>string</td>
-                <td>$type</td>
-                <td>
-</td>
-            </tr>
-                    <tr>
-                <td>array</td>
-                <td>$options</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table>
-        <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-                <h3 id="method_getSubject">
-        <div class="location">at line 154</div>
+                <h3 id="method_getAccountSid">
+        <div class="location">at line 94</div>
         <code>                    string
-    <strong>getSubject</strong>()</code>
+    <strong>getAccountSid</strong>()</code>
     </h3>
     <div class="details">
-        <p>Get subject</p>
+        <p>Get Twilio account sid</p>
         <p>
 </p>
         <div class="tags">
@@ -677,13 +485,13 @@
                     </div>
     </div>
 
-                <h3 id="method_setSubject">
-        <div class="location">at line 165</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr>
-    <strong>setSubject</strong>(string $subject)</code>
+                <h3 id="method_setAccountSid">
+        <div class="location">at line 105</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Twilio">Twilio</abbr>
+    <strong>setAccountSid</strong>(string $account_sid)</code>
     </h3>
     <div class="details">
-        <p>Set subject</p>
+        <p>Set Twilio account sid</p>
         <p>
 </p>
         <div class="tags">
@@ -692,7 +500,7 @@
                     <table>
                     <tr>
                 <td>string</td>
-                <td>$subject</td>
+                <td>$account_sid</td>
                 <td>
 </td>
             </tr>
@@ -703,7 +511,70 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Twilio">Twilio</abbr></td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getAuthToken">
+        <div class="location">at line 116</div>
+        <code>                    string
+    <strong>getAuthToken</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get Twilio auth token</p>
+        <p>
+</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td>
+</td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setAuthToken">
+        <div class="location">at line 127</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Twilio">Twilio</abbr>
+    <strong>setAuthToken</strong>(string $auth_token)</code>
+    </h3>
+    <div class="details">
+        <p>Set Twilio auth tokn</p>
+        <p>
+</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$auth_token</td>
+                <td>
+</td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Twilio">Twilio</abbr></td>
             <td>
 </td>
         </tr>
@@ -715,8 +586,8 @@
     </div>
 
                 <h3 id="method_getFrom">
-        <div class="location">at line 176</div>
-        <code>                    array
+        <div class="location">at line 138</div>
+        <code>                    string
     <strong>getFrom</strong>()</code>
     </h3>
     <div class="details">
@@ -729,7 +600,7 @@
 
                     <table>
         <tr>
-            <td>array</td>
+            <td>string</td>
             <td>
 </td>
         </tr>
@@ -741,9 +612,9 @@
     </div>
 
                 <h3 id="method_setFrom">
-        <div class="location">at line 187</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr>
-    <strong>setFrom</strong>(mixed $from)</code>
+        <div class="location">at line 149</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Twilio">Twilio</abbr>
+    <strong>setFrom</strong>(string $from)</code>
     </h3>
     <div class="details">
         <p>Set from</p>
@@ -754,7 +625,7 @@
 
                     <table>
                     <tr>
-                <td>mixed</td>
+                <td>string</td>
                 <td>$from</td>
                 <td>
 </td>
@@ -766,7 +637,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Twilio">Twilio</abbr></td>
             <td>
 </td>
         </tr>
@@ -778,138 +649,12 @@
     </div>
 
                 <h3 id="method_getTo">
-        <div class="location">at line 198</div>
-        <code>                    array
+        <div class="location">at line 160</div>
+        <code>                    string
     <strong>getTo</strong>()</code>
     </h3>
     <div class="details">
         <p>Get to</p>
-        <p>
-</p>
-        <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table>
-        <tr>
-            <td>array</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-                <h3 id="method_setTo">
-        <div class="location">at line 209</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr>
-    <strong>setTo</strong>(mixed $to)</code>
-    </h3>
-    <div class="details">
-        <p>Set to</p>
-        <p>
-</p>
-        <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table>
-                    <tr>
-                <td>mixed</td>
-                <td>$to</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table>
-        <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-                <h3 id="method_getReplyTo">
-        <div class="location">at line 220</div>
-        <code>                    array
-    <strong>getReplyTo</strong>()</code>
-    </h3>
-    <div class="details">
-        <p>Get reply to</p>
-        <p>
-</p>
-        <div class="tags">
-            
-                            <h4>Return Value</h4>
-
-                    <table>
-        <tr>
-            <td>array</td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-                <h3 id="method_setReplyTo">
-        <div class="location">at line 231</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr>
-    <strong>setReplyTo</strong>(mixed $reply_to)</code>
-    </h3>
-    <div class="details">
-        <p>Set reply to</p>
-        <p>
-</p>
-        <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table>
-                    <tr>
-                <td>mixed</td>
-                <td>$reply_to</td>
-                <td>
-</td>
-            </tr>
-            </table>
-
-            
-                            <h4>Return Value</h4>
-
-                    <table>
-        <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr></td>
-            <td>
-</td>
-        </tr>
-    </table>
-
-            
-            
-                    </div>
-    </div>
-
-                <h3 id="method_getContentType">
-        <div class="location">at line 242</div>
-        <code>                    string
-    <strong>getContentType</strong>()</code>
-    </h3>
-    <div class="details">
-        <p>Get content type</p>
         <p>
 </p>
         <div class="tags">
@@ -929,13 +674,13 @@
                     </div>
     </div>
 
-                <h3 id="method_setContentType">
-        <div class="location">at line 253</div>
-        <code>                    <abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr>
-    <strong>setContentType</strong>(string $content_type)</code>
+                <h3 id="method_setTo">
+        <div class="location">at line 171</div>
+        <code>                    <abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Twilio">Twilio</abbr>
+    <strong>setTo</strong>(string $to)</code>
     </h3>
     <div class="details">
-        <p>Set content type</p>
+        <p>Set to</p>
         <p>
 </p>
         <div class="tags">
@@ -944,7 +689,7 @@
                     <table>
                     <tr>
                 <td>string</td>
-                <td>$content_type</td>
+                <td>$to</td>
                 <td>
 </td>
             </tr>
@@ -955,7 +700,7 @@
 
                     <table>
         <tr>
-            <td><abbr title="Omnimessage\MessageDispatchers\Omnimessage\MessageDispatchers\Email">Email</abbr></td>
+            <td><abbr title="Omnimessage\MessageDispatcher\Omnimessage\MessageDispatcher\Twilio">Twilio</abbr></td>
             <td>
 </td>
         </tr>
